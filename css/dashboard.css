@@ -63,6 +63,7 @@ body {
 .data-container > div {
 	display: flex;
 	align-items: center;
+	justify-content: space-between;
 	margin-bottom: 1em;
 }
 
@@ -76,7 +77,7 @@ body {
 	border: none;
 	color: #111;
 	text-align: end;
-	width: 100%;
+	width: 50%;
 	margin-right: 0.5em;
 }
 
