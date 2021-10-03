@@ -32,21 +32,21 @@ body {
 	position: absolute;
 	bottom: 0;
 	left: 20px;
-	width: 500px;
-	opacity: 0.7;
+	width: 450px;
+	opacity: 0.5;
 }
 
 .cycling {
 	position: absolute;
-	top: 200px;
-	right: 150px;
-	width: 300px;
-	opacity: 0.7;
+	top: 250px;
+	right: 170px;
+	width: 250px;
+	opacity: 0.5;
 }
 
 .sign-in-container {
 	border-radius: 0.5em;
-	box-shadow: 0 0 5px 1px #ededed;
+	box-shadow: 0 0 10px 1px #ededed;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -113,7 +113,7 @@ body {
 	}
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1300px) {
 	.running {
 		width: 400px;
 	}
@@ -123,7 +123,7 @@ body {
 	}
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1200px) {
 	.running,
 	.cycling {
 		display: none;
