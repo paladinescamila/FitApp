@@ -10,16 +10,22 @@ const saveUser = (user, pwd) => {
 
 
 //Revisar el parametro name, falta decidir en qué colección se va a guardar
-const findUser = (user,pwd,name) => {
+const findUser = (user,pwd,name, cent) => {
+    let flag = cent;
     const collectionRef = db.collection("users")
     try{
         const response = collectionRef.where('user', '==', user).onSnapshot((snapshot) => {
-            if (snapshot.docs.length > 0){
-                alert("El usuario ya se encuentra creado, por favor, inicie sesión!");
-            }
-            else if (snapshot.docs.length === 0){
+            if (snapshot.docs.length === 0 && flag){
                 saveUser(user,pwd)
-                alert("Usuario registrado con éxito!")
+                alert("Usuario registrado con éxito!");
+                flag = false;
+                document.getElementById("name").value = ""
+                document.getElementById("user").value = ""
+                document.getElementById("pwd").value = ""
+            }
+            else if (snapshot.docs.length > 0 && flag){
+                alert("El usuario ya se encuentra creado, por favor, inicie sesión!");
+                flag = false;
             }
         })
     } catch (error){
@@ -33,5 +39,9 @@ signupForm.addEventListener("click", async(e) => {
     const name = document.getElementById("name").value;
     const user = document.getElementById("user").value;
     const pwd = document.getElementById("pwd").value;
-    await findUser(user,pwd,name)
+    if(name != "" && user != "" && pwd != ""){
+        await findUser(user,pwd,name,true);
+    }else{
+        alert("Todos los campos deben ser llenados!");
+    }
 })

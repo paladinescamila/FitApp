@@ -18,6 +18,10 @@ loginForm.addEventListener("click", async(e) =>{
     const user = document.getElementById("user").value;
     const pwd = document.getElementById("password").value;
 
-    await findUserLogin(user,pwd);  
+    if(user != "" && pwd != ""){
+        await findUserLogin(user,pwd);  
+    } else {
+        alert("Todos los campos deben ser llenados!");
+    }
 });
 
