@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>FitApp</title>
+		<link rel="stylesheet" href="../css/form.css" />
+	</head>
+	<body>
+		<div class="form-container">
+			<p>Cuéntanos de ti</p>
+			<input id="weight" type="number" placeholder="Peso (Kg)" required />
+			<input id="height" type="number" placeholder="Estatura (cm)" required />
+			<div class="sex">
+				<p>Sexo</p>
+				<select name="sex" id="sex">
+					<option value="n">Seleccione</option>
+					<option value="f">Femenino</option>
+					<option value="m">Masculino</option>
+					<option value="o">Otro</option>
+				</select>
+			</div>
+			<div class="birth">
+				<p>Fecha de nacimiento</p>
+				<input id="birth" type="date" required />
+			</div>
+			<button id="save">Guardar</button>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,92 @@
+@import url(normalize.css);
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+:root {
+	--logo-color: #ff8400;
+	--theme-0: #d47004;
+	--theme-1: #eb7d08;
+	--theme-2: #f3c89a;
+}
+
+* {
+	outline: none;
+	box-sizing: border-box;
+	font-family: "Lato", sans-serif;
+}
+
+body {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+.form-container {
+	border-radius: 0.5em;
+	box-shadow: 0 0 10px 1px #ededed;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 450px;
+	height: 500px;
+}
+
+.form-container > p:first-of-type {
+	font-weight: 700;
+	font-size: 2.5em;
+	margin: 0 0 1em 0;
+	color: #222;
+}
+
+.form-container > input,
+.form-container select,
+.birth input {
+	border: none;
+	background-color: #efefef;
+	padding: 1em;
+	margin: 0.3em;
+	width: 75%;
+	border: 2px solid transparent;
+	border-radius: 0.3em;
+}
+
+.sex,
+.birth {
+	width: 75%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.form-container input:focus {
+	border: 2px solid var(--theme-2);
+}
+
+.form-container > button {
+	border: none;
+	padding: 1em;
+	background-color: var(--theme-1);
+	color: #fff;
+	margin: 2em 1em 1em 1em;
+	font-weight: 500;
+	cursor: pointer;
+	border-radius: 0.3em;
+	width: 75%;
+}
+
+.form-container > button:hover {
+	background-color: var(--theme-0);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input[type="number"] {
+	-moz-appearance: textfield;
+}
