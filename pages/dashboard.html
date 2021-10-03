@@ -9,12 +9,21 @@
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.bundle.min.js"></script>
 	</head>
 	<body>
-		<p class="name">Juan Pérez</p>
-		<div class="age-gender">
-			<p class="age">30 años</p>
-			<img src="../img/male.svg" alt="Gender" class="gender" />
-		</div>
 		<div class="stats">
+			<div class="header">
+				<img src="../img/Logo.svg" alt="FitApp" class="logo" />
+				<div class="personal-info">
+					<p class="name">Juan Pérez</p>
+					<div class="age-gender">
+						<p class="age">30 años</p>
+						<img src="../img/male.svg" alt="Gender" class="gender" />
+					</div>
+				</div>
+				<div class="settings-and-signout">
+					<button class="settings"><img src="../img/settings.svg" alt="Configuraciones" /></button>
+					<button class="sign-out"><img src="../img/logout.svg" alt="Salir" /></button>
+				</div>
+			</div>
 			<div class="weight card">
 				<p>PESO</p>
 				<p>80Kg</p>
@@ -25,14 +34,34 @@
 				<p>30.48</p>
 				<p>Obesidad I</p>
 			</div>
+			<div class="muscle card">
+				<p>Porcentaje de masa muscular</p>
+				<p>30.48</p>
+			</div>
+			<div class="water card">
+				<p>% de agua</p>
+				<p>30.48</p>
+			</div>
 			<div class="weight-chart card">
 				<p>Peso</p>
-				<canvas id="weight-chart" width="400" height="400"></canvas>
+				<canvas id="weight-chart"></canvas>
 			</div>
-			<div class="IMC-chart card">GRÁFICA DE IMC</div>
-			<div class="muscle-chart card">GRÁFICA DE MÚSCULO</div>
-			<div class="water-chart card">GRÁFICA DE PORCENTAJE DE AGUA</div>
+			<div class="IMC-chart card">
+				<p>IMC</p>
+				<canvas id="IMC-chart"></canvas>
+			</div>
+			<div class="muscle-chart card">
+				<p>% de masa muscular</p>
+				<canvas id="muscle-chart"></canvas>
+			</div>
+			<div class="water-chart card">
+				<p>% de agua</p>
+				<canvas id="water-chart"></canvas>
+			</div>
 		</div>
 		<script src="../js/weight-chart.js"></script>
+		<script src="../js/IMC-chart.js"></script>
+		<script src="../js/muscle-chart.js"></script>
+		<script src="../js/water-chart.js"></script>
 	</body>
 </html>
