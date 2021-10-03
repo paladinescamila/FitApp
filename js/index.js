@@ -13,13 +13,22 @@ const findUserLogin = (user,pwd) => {
     }
 }
 
+function validateEmail(email) {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
+
 loginForm.addEventListener("click", async(e) =>{
     e.preventDefault();
     const user = document.getElementById("user").value;
     const pwd = document.getElementById("password").value;
 
     if(user != "" && pwd != ""){
-        await findUserLogin(user,pwd);  
+        if(validateEmail(user)){
+            await findUserLogin(user.toLowerCase(),pwd);  
+        } else {
+            alert("El texto ingresado no es un correo electrónico!")
+        }
     } else {
         alert("Todos los campos deben ser llenados!");
     }
