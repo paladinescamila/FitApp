@@ -18,24 +18,41 @@ body {
 	width: 100%;
 	height: 100vh;
 	display: flex;
-	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	position: relative;
 }
 
-h1 {
-	color: var(--logo-color);
+.logo {
+	position: absolute;
+	top: 20px;
+}
+
+.running {
+	position: absolute;
+	bottom: 0;
+	left: 20px;
+	width: 500px;
+	opacity: 0.7;
+}
+
+.cycling {
+	position: absolute;
+	top: 200px;
+	right: 150px;
+	width: 300px;
+	opacity: 0.7;
 }
 
 .sign-in-container {
 	border-radius: 0.5em;
-	box-shadow: 0 0 5px 1px #ddd;
+	box-shadow: 0 0 5px 1px #ededed;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	width: 400px;
-	height: 470px;
+	width: 450px;
+	height: 450px;
 }
 
 .sign-in-container > p:first-of-type {
@@ -93,5 +110,22 @@ h1 {
 	.sign-in-container > input,
 	.sign-in-container > button {
 		width: 80%;
+	}
+}
+
+@media (max-width: 1400px) {
+	.running {
+		width: 400px;
+	}
+
+	.cycling {
+		width: 200px;
+	}
+}
+
+@media (max-width: 1300px) {
+	.running,
+	.cycling {
+		display: none;
 	}
 }
