@@ -12,13 +12,29 @@
 		<img src="img/run.svg" alt="Running" class="running" />
 		<div class="sign-in-container">
 			<p>Inicia sesión</p>
-			<input type="text" placeholder="Correo electrónico" required />
-			<input type="password" placeholder="Contraseña" required />
+			<input id="user" type="email" placeholder="Correo electrónico" required />
+			<input id="password" type="password" placeholder="Contraseña" required />
 			<a href="">Olvidé mi contraseña</a>
-			<button>Ingresa</button>
+			<button id="login">Ingresa</button>
 			<p>¿Aún no tienes una cuenta?</p>
 			<a href="pages/signup.html">¡Regístrate!</a>
 		</div>
 		<img src="img/bike.svg" alt="Cycling" class="cycling" />
+		<script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-firestore.js"></script>
+		
+		<script>
+			const firebaseConfig = {
+				apiKey: "AIzaSyDqj3-QL0NH92lEqGGCZRHiUTnfXdtV_W8",
+				authDomain: "fitappsoft.firebaseapp.com",
+				projectId: "fitappsoft",
+				storageBucket: "fitappsoft.appspot.com",
+				messagingSenderId: "979155495236",
+				appId: "1:979155495236:web:c8bf225edbfcdfdcd00f11",
+				measurementId: "G-797PJGJ085"
+			};
+			firebase.initializeApp(firebaseConfig);
+		</script>
+		<script src="js/index.js"></script>
 	</body>
 </html>
