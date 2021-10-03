@@ -5,19 +5,34 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>FitApp</title>
+		<link rel="stylesheet" href="../css/dashboard.css" />
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.bundle.min.js"></script>
 	</head>
 	<body>
+		<p class="name">Juan Pérez</p>
+		<div class="age-gender">
+			<p class="age">30 años</p>
+			<img src="../img/male.svg" alt="Gender" class="gender" />
+		</div>
 		<div class="stats">
-			<div class="weight">
+			<div class="weight card">
 				<p>PESO</p>
 				<p>80Kg</p>
-				<p>PESO OBJETIVO: 60Kg</p>
+				<p>Peso objetivo: 60Kg</p>
 			</div>
-			<div class="IMC">
+			<div class="IMC card">
 				<p>IMC</p>
-				<p></p>
-				<p></p>
+				<p>30.48</p>
+				<p>Obesidad I</p>
 			</div>
+			<div class="weight-chart card">
+				<p>Peso</p>
+				<canvas id="weight-chart" width="400" height="400"></canvas>
+			</div>
+			<div class="IMC-chart card">GRÁFICA DE IMC</div>
+			<div class="muscle-chart card">GRÁFICA DE MÚSCULO</div>
+			<div class="water-chart card">GRÁFICA DE PORCENTAJE DE AGUA</div>
 		</div>
+		<script src="../js/weight-chart.js"></script>
 	</body>
 </html>
