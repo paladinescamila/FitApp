@@ -23,6 +23,27 @@ body {
 	position: relative;
 }
 
+.logo {
+	position: absolute;
+	top: 20px;
+}
+
+.running {
+	position: absolute;
+	bottom: 0;
+	left: 20px;
+	width: 450px;
+	opacity: 0.5;
+}
+
+.cycling {
+	position: absolute;
+	top: 250px;
+	right: 170px;
+	width: 250px;
+	opacity: 0.5;
+}
+
 .form-container {
 	border-radius: 0.5em;
 	box-shadow: 0 0 10px 1px #ededed;
@@ -89,4 +110,21 @@ input::-webkit-inner-spin-button {
 
 input[type="number"] {
 	-moz-appearance: textfield;
+}
+
+@media (max-width: 1300px) {
+	.running {
+		width: 400px;
+	}
+
+	.cycling {
+		width: 200px;
+	}
+}
+
+@media (max-width: 1200px) {
+	.running,
+	.cycling {
+		display: none;
+	}
 }
