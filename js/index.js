@@ -4,7 +4,7 @@ const db = firebase.firestore();
 const loginForm = document.getElementById("login");
 
 const saveUser = (user, pwd) => {
-    db.collection("users").doc("user").set({
+    db.collection("users").doc(user).set({
         user:user,
         pwd,pwd
     });
