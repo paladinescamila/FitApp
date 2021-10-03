@@ -9,21 +9,36 @@
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.bundle.min.js"></script>
 	</head>
 	<body>
-		<div class="stats">
-			<div class="header">
+		<div class="header">
+			<div>
 				<img src="../img/Logo.svg" alt="FitApp" class="logo" />
-				<div class="personal-info">
-					<p class="name">Juan Pérez</p>
-					<div class="age-gender">
-						<p class="age">30 años</p>
-						<img src="../img/male.svg" alt="Gender" class="gender" />
+				<p class="name">Juan Pérez</p>
+				<div class="data-container">
+					<div class="">
+						<p class="main-data">Fecha de nacimiento:</p>
+						<input type="date" name="" id="" />
+					</div>
+					<div class="">
+						<p class="main-data">Sexo:</p>
+						<select class="input-main-data" name="" id="">
+							<option value="Femenino">Femenino</option>
+							<option value="Masculino" selected>Masculino</option>
+							<option value="Otro">Otro</option>
+						</select>
+					</div>
+					<div class="">
+						<p class="main-data">Peso:</p>
+						<input class="input-main-data" type="number" name="" id="" value="80" />kg
+					</div>
+					<div class="">
+						<p class="main-data">Estatura:</p>
+						<input class="input-main-data" type="number" name="" id="" value="1.62" />cm
 					</div>
 				</div>
-				<div class="settings-and-signout">
-					<button class="settings"><img src="../img/settings.svg" alt="Configuraciones" /></button>
-					<button class="sign-out"><img src="../img/logout.svg" alt="Salir" /></button>
-				</div>
 			</div>
+			<button class="sign-out">Salir</button>
+		</div>
+		<div class="stats">
 			<div class="weight card">
 				<p>PESO</p>
 				<p>80Kg</p>
@@ -58,6 +73,7 @@
 				<p>% de agua</p>
 				<canvas id="water-chart"></canvas>
 			</div>
+			<div class="footer card">Footer</div>
 		</div>
 		<script src="../js/weight-chart.js"></script>
 		<script src="../js/IMC-chart.js"></script>
