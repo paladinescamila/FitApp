@@ -1,3 +1,8 @@
+function validateEmail(email) {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
+
 
 const signupForm = document.getElementById("signup");
 
@@ -24,7 +29,7 @@ const findUser = (user,pwd,name, cent) => {
                 document.getElementById("pwd").value = ""
             }
             else if (snapshot.docs.length > 0 && flag){
-                alert("El usuario ya se encuentra creado, por favor, inicie sesión!");
+                alert("El usuario ya se encuentra creado con el mismo correo electrónico, por favor, inicie sesión!");
                 flag = false;
             }
         })
@@ -40,7 +45,11 @@ signupForm.addEventListener("click", async(e) => {
     const user = document.getElementById("user").value;
     const pwd = document.getElementById("pwd").value;
     if(name != "" && user != "" && pwd != ""){
-        await findUser(user,pwd,name,true);
+        if(validateEmail(user)){
+            await findUser(user.toLowerCase(),pwd,name,true);
+        } else {
+            alert("El texto ingresado no es un correo electrónico");
+        }
     }else{
         alert("Todos los campos deben ser llenados!");
     }
