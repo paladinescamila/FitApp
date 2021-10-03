@@ -1,0 +1,97 @@
+@import url(normalize.css);
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+:root {
+	--logo-color: #ff8400;
+	--theme-0: #d47004;
+	--theme-1: #eb7d08;
+	--theme-2: #f3c89a;
+}
+
+* {
+	outline: none;
+	box-sizing: border-box;
+	font-family: "Lato", sans-serif;
+}
+
+body {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+h1 {
+	color: var(--logo-color);
+}
+
+.sign-in-container {
+	border-radius: 0.5em;
+	box-shadow: 0 0 5px 1px #ddd;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 400px;
+	height: 470px;
+}
+
+.sign-in-container > p:first-of-type {
+	font-weight: 700;
+	font-size: 2.5em;
+	margin: 0 0 1em 0;
+	color: #222;
+}
+
+.sign-in-container > input {
+	border: none;
+	background-color: #efefef;
+	padding: 1em;
+	margin: 0.5em;
+	width: 75%;
+	border: 2px solid transparent;
+	border-radius: 0.3em;
+}
+
+.sign-in-container input:focus {
+	border: 2px solid var(--theme-2);
+}
+
+.sign-in-container > button {
+	border: none;
+	padding: 1em;
+	background-color: var(--theme-1);
+	color: #fff;
+	margin: 2em 1em 1em 1em;
+	font-weight: 500;
+	cursor: pointer;
+	border-radius: 0.3em;
+	width: 75%;
+}
+
+.sign-in-container > button:hover {
+	background-color: var(--theme-0);
+}
+
+.sign-in-container > p:nth-of-type(2),
+.sign-in-container > a {
+	margin: 0;
+	color: #888;
+}
+
+.sign-in-container > a:hover {
+	color: #666;
+}
+
+@media (max-width: 470px) {
+	.sign-in-container {
+		width: 90%;
+	}
+
+	.sign-in-container > input,
+	.sign-in-container > button {
+		width: 80%;
+	}
+}
