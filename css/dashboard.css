@@ -20,91 +20,102 @@ p {
 }
 
 body {
-	background-color: #fefefe;
-}
-
-.stats {
 	width: 100%;
 	height: 100vh;
-	margin: 0;
-	padding: 2em;
+	background-color: #eee;
 	display: grid;
-	grid-gap: 1em;
-	grid-template-columns: repeat(4, 1fr);
-	grid-template-rows: 1fr 1fr 3fr;
-	grid-template-areas:
-		"header header header header"
-		"weight IMC muscle water"
-		"weightc IMCc musclec waterc";
+	grid-template-columns: 1fr 3fr;
+	margin: 0;
 }
 
 .header {
-	grid-area: header;
+	margin: 0;
+	height: 100vh;
+	padding: 2em;
+	background-color: #fff;
 	display: flex;
+	flex-direction: column;
 	justify-content: space-between;
+	align-items: center;
 }
 
-.header > .logo {
-	align-self: flex-start;
-	width: 100px;
+.header .logo {
+	margin-bottom: 3em;
 }
 
 .name {
-	font-size: 3em;
+	font-size: 2em;
 	font-weight: 700;
 	text-align: center;
 }
 
-.personal-info {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+.data-container {
+	margin-top: 2em;
 }
 
-.age-gender {
+.data-container > div {
 	display: flex;
-	justify-content: center;
 	align-items: center;
+	margin-bottom: 1em;
 }
 
-.age {
-	font-size: 1.2em;
-	color: #777;
+.data-container .main-data {
 	margin-right: 0.5em;
+	font-weight: 700;
+}
+
+.data-container .input-main-data {
+	padding: 0.5em;
+	border: none;
+	color: #111;
+	text-align: end;
+	width: 100%;
+	margin-right: 0.5em;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input[type="number"] {
+	-moz-appearance: textfield;
+}
+
+.data-container .input-main-data:hover {
+	background-color: #eee;
 }
 
 .gender {
 	width: 15px;
 }
 
-.settings-and-signout {
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-start;
-}
-
-.settings,
 .sign-out {
 	border: none;
-	padding: 0.5em;
+	padding: 0.5em 3em;
 	background-color: var(--theme-3);
-	color: #333;
-	margin-left: 0.5em;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	color: #fff;
 	cursor: pointer;
 	opacity: 0.85;
 }
 
-.settings:hover,
 .sign-out:hover {
 	opacity: 1;
 }
 
-.settings > img,
-.sign-out > img {
-	width: 15px;
+.stats {
+	height: 100%;
+	margin: 0;
+	padding: 2em;
+	display: grid;
+	grid-gap: 1em;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: 2fr 3fr 1fr;
+	grid-template-areas:
+		"weight IMC muscle water"
+		"weightc IMCc musclec waterc"
+		"footer footer footer footer";
 }
 
 .card {
@@ -185,6 +196,10 @@ body {
 #IMC-chart,
 #muscle-chart,
 #water-chart {
-	width: 400px;
-	height: 400px;
+	/* width: 400px;
+	height: 400px; */
+}
+
+.footer {
+	grid-area: footer;
 }
