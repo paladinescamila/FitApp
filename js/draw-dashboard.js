@@ -16,7 +16,8 @@ let nameElement = document.getElementById("name"),
     emailElement = document.getElementById("email"),
     birthElement = document.getElementById("birth"),
     sexElement = document.getElementById("sex"),
-    heightElement = document.getElementById("height");
+    heightElement = document.getElementById("height"),
+    weightElement = document.getElementById("weight");
 
 // Grid components
 let weightCardElement = document.getElementById("weight-card"),
@@ -89,6 +90,7 @@ const drawDashboard = async (email) => {
             birthElement.value = birthDate;
             sexElement.value = sex;
             heightElement.value = height;
+            weightElement.value = weight;
 
             // Paint data in the grid
             weightCardElement.innerHTML = weight + "Kg";

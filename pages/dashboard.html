@@ -1,107 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="shortcut icon" href="../img/Logo.svg" type="image/x-icon" />
-        <title>FitApp</title>
-        <link rel="stylesheet" href="../css/dashboard.css" />
-        <script
-            type="text/javascript"
-            src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.bundle.min.js"
-        ></script>
-    </head>
-    <body>
-        <div class="header card">
-            <div>
-                <img src="../img/Logo.svg" alt="FitApp" class="logo" />
-                <p class="name" id="name"></p>
-                <p class="email" id="email"></p>
-                <div class="data-container">
-                    <div class="">
-                        <p class="main-data">Fecha de nacimiento</p>
-                        <input
-                            type="date"
-                            name=""
-                            class="input-main-data"
-                            id="birth"
-                        />
-                    </div>
-                    <div class="">
-                        <p class="main-data">Sexo</p>
-                        <select class="input-main-data" name="" id="sex">
-                            <option value="f">Femenino</option>
-                            <option value="m">Masculino</option>
-                            <option value="o">Otro</option>
-                        </select>
-                    </div>
-                    <div class="">
-                        <p class="main-data">Estatura (cm)</p>
-                        <input
-                            class="input-main-data"
-                            type="number"
-                            name=""
-                            id="height"
-                        />
-                    </div>
-                    <button class="new-weight">+ Nuevo peso</button>
-                </div>
-            </div>
-            <button id="sign-out" class="sign-out">Salir</button>
-        </div>
-        <div class="stats">
-            <div class="weight card">
-                <p>PESO</p>
-                <p id="weight-card"></p>
-                <p id="target-weight"></p>
-            </div>
-            <div class="IMC card">
-                <p>IMC</p>
-                <p id="imc-card"></p>
-                <p id="imc-level"></p>
-            </div>
-            <div class="muscle card">
-                <p>Masa muscular</p>
-                <p id="muscle"></p>
-            </div>
-            <div class="water card">
-                <p>Agua</p>
-                <p id="water"></p>
-            </div>
-            <div class="weight-chart card">
-                <p>Peso</p>
-                <canvas id="weight-chart"></canvas>
-            </div>
-            <div class="IMC-chart card">
-                <p>IMC</p>
-                <canvas id="IMC-chart"></canvas>
-            </div>
-            <div class="muscle-water-chart card">
-                <p>Porcentaje de masa muscular y agua</p>
-                <canvas id="muscle-water-chart"></canvas>
-            </div>
-        </div>
-        <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-firestore.js"></script>
-        <script>
-            const firebaseConfig = {
-                apiKey: "AIzaSyDqj3-QL0NH92lEqGGCZRHiUTnfXdtV_W8",
-                authDomain: "fitappsoft.firebaseapp.com",
-                projectId: "fitappsoft",
-                storageBucket: "fitappsoft.appspot.com",
-                messagingSenderId: "979155495236",
-                appId: "1:979155495236:web:c8bf225edbfcdfdcd00f11",
-                measurementId: "G-797PJGJ085",
-            };
-            firebase.initializeApp(firebaseConfig);
-        </script>
-        <script src="../js/firebase.js"></script>
-        <script src="../js/functions.js"></script>
-        <script src="../js/weight-chart.js"></script>
-        <script src="../js/IMC-chart.js"></script>
-        <script src="../js/muscle-water-chart.js"></script>
-        <script src="../js/dashboard.js"></script>
-        <script src="../js/draw-dashboard.js"></script>
-    </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="shortcut icon" href="../img/Logo.svg" type="image/x-icon" />
+		<title>FitApp</title>
+		<link rel="stylesheet" href="../css/dashboard.css" />
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.bundle.min.js"></script>
+	</head>
+	<body>
+		<div class="header card">
+			<div>
+				<img src="../img/Logo.svg" alt="FitApp" class="logo" />
+				<p class="name" id="name"></p>
+				<p class="email" id="email"></p>
+				<div class="data-container">
+					<div class="">
+						<p class="main-data">Fecha de nacimiento</p>
+						<input type="date" name="" class="input-main-data" id="birth" />
+					</div>
+					<div class="">
+						<p class="main-data">Sexo</p>
+						<select class="input-main-data" name="" id="sex">
+							<option value="f">Femenino</option>
+							<option value="m">Masculino</option>
+							<option value="o">Otro</option>
+						</select>
+					</div>
+					<div class="">
+						<p class="main-data">Estatura (cm)</p>
+						<input class="input-main-data" type="number" name="" id="height" />
+					</div>
+					<div class="">
+						<p class="main-data">Peso (Kg)</p>
+						<input class="input-main-data" type="number" name="" id="weight" />
+					</div>
+				</div>
+			</div>
+			<button id="sign-out" class="sign-out">Salir</button>
+		</div>
+		<div class="stats">
+			<div class="weight card">
+				<p>PESO</p>
+				<p id="weight-card"></p>
+				<p id="target-weight"></p>
+			</div>
+			<div class="IMC card">
+				<p>IMC</p>
+				<p id="imc-card"></p>
+				<p id="imc-level"></p>
+			</div>
+			<div class="muscle card">
+				<p>Masa muscular</p>
+				<p id="muscle"></p>
+			</div>
+			<div class="water card">
+				<p>Agua</p>
+				<p id="water"></p>
+			</div>
+			<div class="weight-chart card">
+				<p>Peso</p>
+				<canvas id="weight-chart"></canvas>
+			</div>
+			<div class="IMC-chart card">
+				<p>IMC</p>
+				<canvas id="IMC-chart"></canvas>
+			</div>
+			<div class="muscle-water-chart card">
+				<p>Porcentaje de masa muscular y agua</p>
+				<canvas id="muscle-water-chart"></canvas>
+			</div>
+		</div>
+		<script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-firestore.js"></script>
+		<script>
+			const firebaseConfig = {
+				apiKey: "AIzaSyDqj3-QL0NH92lEqGGCZRHiUTnfXdtV_W8",
+				authDomain: "fitappsoft.firebaseapp.com",
+				projectId: "fitappsoft",
+				storageBucket: "fitappsoft.appspot.com",
+				messagingSenderId: "979155495236",
+				appId: "1:979155495236:web:c8bf225edbfcdfdcd00f11",
+				measurementId: "G-797PJGJ085",
+			};
+			firebase.initializeApp(firebaseConfig);
+		</script>
+		<script src="../js/firebase.js"></script>
+		<script src="../js/functions.js"></script>
+		<script src="../js/weight-chart.js"></script>
+		<script src="../js/IMC-chart.js"></script>
+		<script src="../js/muscle-water-chart.js"></script>
+		<script src="../js/dashboard.js"></script>
+		<script src="../js/draw-dashboard.js"></script>
+	</body>
 </html>
