@@ -24,3 +24,6 @@ const getIMCLevel = (IMC) => {
 	else if (IMC >= 35) return 4;
 	else return -1;
 };
+
+// Two digit formatter
+const format = (n) => (n < 10 ? "0" + n : n);

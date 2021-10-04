@@ -1,14 +1,12 @@
-const drawIMC = (IMC, target, month, year) => {
-	let IMCctx = document.getElementById("IMC-chart").getContext("2d"),
-		months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
-		labels = [],
-		maxValue = Math.max(...IMC) + 10;
+const drawIMC = (dates, IMCs, target) => {
+	let n = dates.length,
+		startIndex = n <= 10 ? 0 : n - 10;
+	dates = dates.slice(startIndex, n + 1);
+	IMCs = IMCs.slice(startIndex, n + 1);
 
-	for (let i = 0; i < 12; i++) {
-		labels.push(`${months[month].slice(0, 3)} ${year}`);
-		month = (month + 1) % 12;
-		if (month === 11) year++;
-	}
+	let IMCctx = document.getElementById("IMC-chart").getContext("2d"),
+		labels = dates.map((d) => `${format(d.getDate())}-${format(d.getMonth() + 1)}-${d.getFullYear()}`),
+		maxValue = Math.max(...IMCs) + 10;
 
 	return new Chart(IMCctx, {
 		type: "line",
@@ -18,7 +16,7 @@ const drawIMC = (IMC, target, month, year) => {
 				{
 					type: "line",
 					label: "IMC",
-					data: IMC,
+					data: IMCs,
 					backgroundColor: "rgba(176, 28, 5, 0.3)",
 					borderColor: "rgb(176, 28, 5)",
 					borderWidth: 1,
@@ -26,7 +24,7 @@ const drawIMC = (IMC, target, month, year) => {
 				{
 					type: "line",
 					label: "IMC objetivo",
-					data: [target, target, target, target, target, target, target, target, target, target, target, target],
+					data: dates.map((d) => target),
 					fill: false,
 					borderColor: "rgb(0, 0, 0)",
 					borderWidth: 1,
