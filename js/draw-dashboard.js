@@ -7,7 +7,9 @@ if (email === null) {
 }
 
 // Banner components
-let nameElement = document.getElementById("name"),
+let nameTitleElement = document.getElementById("name-title"),
+	emailTitleElement = document.getElementById("email-title"),
+	nameElement = document.getElementById("name"),
 	emailElement = document.getElementById("email"),
 	birthElement = document.getElementById("birth"),
 	sexElement = document.getElementById("sex"),
@@ -72,8 +74,10 @@ const drawDashboard = async (email) => {
 				water = waters[nWeight - 1];
 
 			// Paint data in the dashboard banner
-			nameElement.innerHTML = name;
-			emailElement.innerHTML = email;
+			nameTitleElement.innerHTML = name;
+			emailTitleElement.innerHTML = email;
+			nameElement.value = name = name;
+			emailElement.value = email;
 			birthElement.value = birthDate;
 			sexElement.value = sex;
 			heightElement.value = height;

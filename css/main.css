@@ -1,0 +1,41 @@
+@import url(normalize.css);
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+:root {
+	--logo-color: #ff8400;
+	--theme-0: #d47004;
+	--theme-1: #eb7d08;
+	--theme-2: #f3c89a;
+}
+
+* {
+	outline: none;
+	box-sizing: border-box;
+	font-family: "Lato", sans-serif;
+}
+
+.solid-button {
+	border: none;
+	padding: 0.7em 1.5em;
+	background-color: var(--theme-1);
+	color: #fff;
+	margin: 0;
+	font-weight: 500;
+	cursor: pointer;
+	border-radius: 0.3em;
+}
+
+.solid-button:hover {
+	background-color: var(--theme-0);
+}
+
+.input {
+	border: none;
+	background-color: #efefef;
+	padding: 0.5em;
+	border-radius: 0.1em;
+}
+
+.input:focus {
+	outline: 2px solid var(--theme-2);
+}

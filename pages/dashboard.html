@@ -14,28 +14,9 @@
 		<div class="header card">
 			<div>
 				<img src="../img/Logo.svg" alt="FitApp" class="logo" />
-				<p class="name" id="name"></p>
-				<p class="email" id="email"></p>
+				<p class="name" id="name-title"></p>
+				<p class="email" id="email-title"></p>
 				<div class="data-container">
-					<div class="">
-						<p class="main-data">Fecha de nacimiento</p>
-						<input type="date" name="" class="input-main-data" id="birth" />
-					</div>
-					<div class="">
-						<p class="main-data">Sexo</p>
-						<select class="input-main-data" name="" id="sex">
-							<option value="f">Femenino</option>
-							<option value="m">Masculino</option>
-						</select>
-					</div>
-					<div class="">
-						<p class="main-data">Estatura (cm)</p>
-						<input class="input-main-data" type="number" name="" id="height" />
-					</div>
-					<div class="">
-						<p class="main-data">Peso (Kg)</p>
-						<input class="input-main-data" type="number" name="" id="weight" />
-					</div>
 				</div>
 			</div>
 			<button id="sign-out" class="sign-out">Salir</button>
@@ -72,9 +53,39 @@
 				<canvas id="muscle-water-chart"></canvas>
 			</div>
 		</div>
-		<div class="dar-bg">
+		<div class="dar-bg" id="settings">
 			<div class="settings">
-				<p>Configuraciones</p>
+				<img src="/img/x.svg" alt="Close" id="close-settings" />
+				<p class="settings-title">Configuraciones</p>
+				<div class="data-container">
+					<p>Nombre</p>
+					<input type="text" class="input" id="name" />
+					<p>Correo</p>
+					<input type="email" class="input" id="email" />
+					<p>Nacimiento</p>
+					<input type="date" class="input" id="birth" />
+					<p>Sexo</p>
+					<select id="sex" class="input">
+						<option value="f">Femenino</option>
+						<option value="m">Masculino</option>
+					</select>
+					<p>Estatura (cm)</p>
+					<input type="number" class="input" id="height" />
+					<p>Peso (Kg)</p>
+					<input type="number" class="input" id="weight" />
+				</div>
+				<div class="change-pass">
+					<p>Cambiar contraseña</p>
+					<div class="change-pass-container">
+						<p>Contraseña anterior</p>
+						<input type="password" class="input" />
+						<p>Contraseña nueva</p>
+						<input type="password" class="input" />
+						<p>Repetir contraseña nueva</p>
+						<input type="password" class="input" />
+					</div>
+				</div>
+				<button class="solid-button" id="save-settings">Guardar</button>
 			</div>
 		</div>
 		<script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-app.js"></script>
