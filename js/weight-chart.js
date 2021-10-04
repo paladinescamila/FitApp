@@ -1,15 +1,12 @@
-const drawWeight = (weights, target, month, year) => {
-	let weightCtx = document.getElementById("weight-chart").getContext("2d"),
-		months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
-		labels = [],
-		maxValue = Math.max(...weights) + 20;
+const drawWeight = (dates, weights, target) => {
+	let n = dates.length,
+		startIndex = n <= 10 ? 0 : n - 10;
+	dates = dates.slice(startIndex, n + 1);
+	weights = weights.slice(startIndex, n + 1);
 
-	for (let i = 0; i < 12; i++) {
-		labels.push(`${months[month].slice(0, 3)} ${year}`);
-		month++;
-		if (month === 12) year++;
-		month %= 12;
-	}
+	let weightCtx = document.getElementById("weight-chart").getContext("2d"),
+		labels = dates.map((d) => `${format(d.getDate())}-${format(d.getMonth() + 1)}-${d.getFullYear()}`),
+		maxValue = Math.max(...weights) + 20;
 
 	return new Chart(weightCtx, {
 		type: "line",
@@ -27,7 +24,7 @@ const drawWeight = (weights, target, month, year) => {
 				{
 					type: "line",
 					label: "Peso objetivo (Kg)",
-					data: [target, target, target, target, target, target, target, target, target, target, target, target],
+					data: dates.map((d) => target),
 					fill: false,
 					borderColor: "rgb(0, 0, 0)",
 					borderWidth: 1,
