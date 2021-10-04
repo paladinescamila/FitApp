@@ -56,14 +56,21 @@ isFilledBirth(user, true);
 const saveForm = document.getElementById("save");
 
 const updateUserInfo = async (user, weight, height, gender, birth) => {
-    let date = firebase.firestore.FieldValue.serverTimestamp();
+    birth = new Date(birth);
+    birth = new Date(
+        birth.getFullYear(),
+        birth.getMonth(),
+        birth.getDate() + 1
+    );
+    birth = firebase.firestore.Timestamp.fromDate(birth);
+    // console.log(birth);
     await db
         .collection("info")
         .doc(user)
         .update({
             height: height,
             gender: gender,
-            birth: firebase.firestore.Timestamp.fromDate(new Date(birth)),
+            birth: birth,
             weights: [
                 {
                     date: firebase.firestore.Timestamp.fromDate(new Date()),
@@ -99,7 +106,12 @@ saveForm.addEventListener("click", async (e) => {
             //Esperar a que se escriban los datos del usuario
             await new Promise((r) => setTimeout(r, 1000));
             //Pasar al dashboard
-            window.location.replace(window.location.hostname);
+            window.location.replace(
+                window.location.href.slice(
+                    0,
+                    window.location.href.indexOf(window.location.pathname)
+                )
+            );
         }
     } else {
         alert("Por favor, llena todos los campos!");
