@@ -1,11 +1,15 @@
+// Open settings window
+
 document.getElementById("go-to-settings").addEventListener("click", (e) => {
 	document.getElementById("settings").style.display = "grid";
 });
 
+// Close settings window
 document.getElementById("close-settings").addEventListener("click", (e) => {
 	document.getElementById("settings").style.display = "none";
 });
 
+// Save settings to Firebase
 document.getElementById("save-settings").addEventListener("click", async (e) => {
 	let newBirth = new Date(birthElement.value),
 		newSex = sexElement.value,
