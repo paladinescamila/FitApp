@@ -2,16 +2,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 
 :root {
-	--logo-color: #ff8400;
 	--theme-0: #d47004;
 	--theme-1: #eb7d08;
 	--theme-2: #f3c89a;
+	--theme-3: #ffe7cd;
 }
 
 * {
 	outline: none;
 	box-sizing: border-box;
 	font-family: "Lato", sans-serif;
+}
+
+p {
+	margin: 0;
 }
 
 /* Button */
