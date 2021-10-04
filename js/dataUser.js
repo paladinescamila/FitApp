@@ -76,7 +76,7 @@ saveForm.addEventListener("click", async(e) => {
             //Esperar a que se escriban los datos del usuario
             await new Promise(r => setTimeout(r, 1000));
             //Pasar al dashboard
-            window.location.replace(window.location.href.slice(0,window.location.href.indexOf("form.html"))+"dashboard.html")
+            window.location.replace(window.location.href.slice(0,window.location.href.indexOf("form.html"))+"dashboard.html?user="+user)
         }
     } else {
         alert("Por favor, llena todos los campos!")
