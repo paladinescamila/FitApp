@@ -1,55 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="shortcut icon" href="../img/Logo.svg" type="image/x-icon" />
-        <title>FitApp</title>
-        <link rel="stylesheet" href="../css/form.css" />
-    </head>
-    <body>
-        <img src="../img/Logo.svg" alt="FitApp" class="logo" />
-        <img src="../img/run.svg" alt="Running" class="running" />
-        <div class="form-container">
-            <p>Cuéntanos de ti</p>
-            <input id="weight" type="number" placeholder="Peso (Kg)" required />
-            <input
-                id="height"
-                type="number"
-                placeholder="Estatura (cm)"
-                required
-            />
-            <div class="sex">
-                <p>Sexo</p>
-                <select name="sex" id="gender">
-                    <option value="n">Seleccione</option>
-                    <option value="f">Femenino</option>
-                    <option value="m">Masculino</option>
-                </select>
-            </div>
-            <div class="birth">
-                <p>Nacimiento</p>
-                <input id="birth" type="date" required />
-            </div>
-            <button id="save">Guardar</button>
-        </div>
-        <img src="../img/bike.svg" alt="Cycling" class="cycling" />
-        <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-firestore.js"></script>
-        <script>
-            const firebaseConfig = {
-                apiKey: "AIzaSyDqj3-QL0NH92lEqGGCZRHiUTnfXdtV_W8",
-                authDomain: "fitappsoft.firebaseapp.com",
-                projectId: "fitappsoft",
-                storageBucket: "fitappsoft.appspot.com",
-                messagingSenderId: "979155495236",
-                appId: "1:979155495236:web:c8bf225edbfcdfdcd00f11",
-                measurementId: "G-797PJGJ085",
-            };
-            firebase.initializeApp(firebaseConfig);
-        </script>
-        <script src="../js/firebase.js"></script>
-        <script src="../js/dataUser.js"></script>
-    </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="shortcut icon" href="../img/Logo.svg" type="image/x-icon" />
+		<title>FitApp</title>
+		<link rel="stylesheet" href="../css/forms.css" />
+	</head>
+	<body>
+		<img src="../img/Logo.svg" alt="FitApp" class="logo" />
+		<img src="../img/run.svg" alt="Running" class="running" />
+		<div class="form-container">
+			<h1>Cuéntanos de ti</h1>
+			<input id="weight" type="number" placeholder="Peso (Kg)" required />
+			<input id="height" type="number" placeholder="Estatura (cm)" required />
+			<div class="sex">
+				<p>Sexo</p>
+				<select name="sex" id="gender">
+					<option value="f">Femenino</option>
+					<option value="m">Masculino</option>
+				</select>
+			</div>
+			<div class="birth">
+				<p>Nacimiento</p>
+				<input id="birth" type="date" required />
+			</div>
+			<button id="save">Guardar</button>
+		</div>
+		<img src="../img/bike.svg" alt="Cycling" class="cycling" />
+		<script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-firestore.js"></script>
+		<script>
+			const firebaseConfig = {
+				apiKey: "AIzaSyDqj3-QL0NH92lEqGGCZRHiUTnfXdtV_W8",
+				authDomain: "fitappsoft.firebaseapp.com",
+				projectId: "fitappsoft",
+				storageBucket: "fitappsoft.appspot.com",
+				messagingSenderId: "979155495236",
+				appId: "1:979155495236:web:c8bf225edbfcdfdcd00f11",
+				measurementId: "G-797PJGJ085",
+			};
+			firebase.initializeApp(firebaseConfig);
+		</script>
+		<script src="../js/firebase.js"></script>
+		<script src="../js/dataUser.js"></script>
+	</body>
 </html>

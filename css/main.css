@@ -14,6 +14,8 @@
 	font-family: "Lato", sans-serif;
 }
 
+/* Button */
+
 .solid-button {
 	border: none;
 	padding: 0.7em 1.5em;
@@ -28,6 +30,8 @@
 .solid-button:hover {
 	background-color: var(--theme-0);
 }
+
+/* Input */
 
 .input {
 	border: none;
