@@ -106,7 +106,6 @@ input[type="number"] {
 	width: 15px;
 }
 
-.new-weight,
 .sign-out {
 	border: none;
 	width: 80%;
@@ -115,17 +114,6 @@ input[type="number"] {
 	color: #fff;
 	cursor: pointer;
 	opacity: 0.85;
-}
-
-.new-weight {
-	width: 100%;
-	margin: 1em 0 0 0;
-	color: var(--theme-0);
-	background-color: transparent;
-}
-
-.new-weight:hover {
-	background-color: var(--theme-4);
 }
 
 .sign-out:hover {

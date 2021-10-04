@@ -11,7 +11,7 @@ const drawIMC = (dates, IMCs, target) => {
 	return new Chart(IMCctx, {
 		type: "line",
 		data: {
-			labels: labels,
+			labels: labels,	
 			datasets: [
 				{
 					type: "line",
