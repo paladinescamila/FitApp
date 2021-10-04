@@ -99,7 +99,7 @@ const drawDashboard = async (email) => {
 drawDashboard(email);
 
 birthElement.addEventListener("change", async (e) => {
-	await new Promise((r) => setTimeout(r, 2000));
+	await new Promise((r) => setTimeout(r, 3000));
 	newBirth = new Date(birthElement.value);
 	newBirth = new Date(newBirth.getFullYear(), newBirth.getMonth(), newBirth.getDate() + 1);
 	if (newBirth < new Date()) {
