@@ -4,6 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="shortcut icon" href="../img/Logo.svg" type="image/x-icon" />
 		<title>FitApp</title>
 		<link rel="stylesheet" href="../css/dashboard.css" />
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.bundle.min.js"></script>
@@ -12,28 +13,26 @@
 		<div class="header">
 			<div>
 				<img src="../img/Logo.svg" alt="FitApp" class="logo" />
-				<p class="name">Juan Pérez</p>
+				<p class="name" id="name"></p>
+				<p class="email" id="email"></p>
 				<div class="data-container">
 					<div class="">
-						<p class="main-data">Nacimiento:</p>
-						<input type="date" name="" id="" class="input-main-data" />
+						<p class="main-data">Fecha de nacimiento</p>
+						<input type="date" name="" class="input-main-data" id="birth" />
 					</div>
 					<div class="">
-						<p class="main-data">Sexo:</p>
-						<select class="input-main-data" name="" id="">
-							<option value="Femenino">Femenino</option>
-							<option value="Masculino" selected>Masculino</option>
-							<option value="Otro">Otro</option>
+						<p class="main-data">Sexo</p>
+						<select class="input-main-data" name="" id="sex">
+							<option value="f">Femenino</option>
+							<option value="m">Masculino</option>
+							<option value="o">Otro</option>
 						</select>
 					</div>
 					<div class="">
-						<p class="main-data">Peso (Kg):</p>
-						<input class="input-main-data" type="number" name="" id="" value="80" />
+						<p class="main-data">Estatura (cm)</p>
+						<input class="input-main-data" type="number" name="" id="height" />
 					</div>
-					<div class="">
-						<p class="main-data">Estatura (cm):</p>
-						<input class="input-main-data" type="number" name="" id="" value="162" />
-					</div>
+					<button class="new-weight">+ Nuevo peso</button>
 				</div>
 			</div>
 			<button class="sign-out">Salir</button>
@@ -41,21 +40,21 @@
 		<div class="stats">
 			<div class="weight card">
 				<p>PESO</p>
-				<p>80Kg</p>
-				<p>Peso objetivo: 60Kg</p>
+				<p id="weight-card"></p>
+				<p id="target-weight"></p>
 			</div>
 			<div class="IMC card">
 				<p>IMC</p>
-				<p>30.48</p>
-				<p>Obesidad I</p>
+				<p id="imc-card"></p>
+				<p id="imc-level"></p>
 			</div>
 			<div class="muscle card">
-				<p>Porcentaje de masa muscular</p>
-				<p>30.48</p>
+				<p>Masa muscular</p>
+				<p id="muscle"></p>
 			</div>
 			<div class="water card">
-				<p>Porcentaje de agua</p>
-				<p>30.48</p>
+				<p>Agua</p>
+				<p id="water"></p>
 			</div>
 			<div class="weight-chart card">
 				<p>Peso</p>
@@ -73,5 +72,7 @@
 		<script src="../js/weight-chart.js"></script>
 		<script src="../js/IMC-chart.js"></script>
 		<script src="../js/muscle-water-chart.js"></script>
+		<script src="../js/functions.js"></script>
+		<script src="../js/draw-dashboard.js"></script>
 	</body>
 </html>
