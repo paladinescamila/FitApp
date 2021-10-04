@@ -10,12 +10,7 @@ const userLogged = (user, cent) => {
     queryUserLogged.get().then((snapshot) => {
         snapshot.forEach((doc) => {
             if (doc.data().online !== true) {
-                window.location.replace(
-                    window.location.href.slice(
-                        0,
-                        window.location.href.indexOf(window.location.pathname)
-                    )
-                );
+                window.location.replace(window.location.href.slice(0, window.location.href.indexOf(window.location.pathname)));
             }
         });
     });
@@ -25,19 +20,12 @@ const findUsers = async (user, cent) => {
     let flag = cent;
     const collectionRef = db.collection("users");
     try {
-        const response = await collectionRef
-            .where("user", "==", user)
-            .onSnapshot((snapshot) => {
-                if (snapshot.docs.length === 0 && flag) {
-                    flag = false;
-                    window.location.replace(
-                        window.location.href.slice(
-                            0,
-                            window.location.href.indexOf("dashboard.html")
-                        ) + "signup.html"
-                    );
-                }
-            });
+        const response = await collectionRef.where("user", "==", user).onSnapshot((snapshot) => {
+            if (snapshot.docs.length === 0 && flag) {
+                flag = false;
+                window.location.replace(window.location.href.slice(0, window.location.href.indexOf("dashboard.html")) + "signup.html");
+            }
+        });
     } catch (error) {
         console.log(error);
     }
@@ -58,10 +46,5 @@ logoutForm.addEventListener("click", async (e) => {
             console.log("Usuario online!");
         });
 
-    window.location.replace(
-        window.location.href.slice(
-            0,
-            window.location.href.indexOf(window.location.pathname)
-        )
-    );
+    window.location.replace(window.location.href.slice(0, window.location.href.indexOf(window.location.pathname)));
 });
