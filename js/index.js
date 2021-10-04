@@ -34,7 +34,7 @@ const searchUser = (user, pwd, cent) => {
                         0,
                         window.location.href.indexOf("index.html")
                     ) +
-                        "pages/dashboard.html?user=" +
+                        "/pages/dashboard.html?user=" +
                         user
                 );
                 console.log("Entramos!");
