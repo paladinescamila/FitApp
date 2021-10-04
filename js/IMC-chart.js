@@ -5,8 +5,8 @@ const drawIMC = (IMC, target, month, year) => {
 		maxValue = Math.max(...IMC) + 10;
 
 	for (let i = 0; i < 12; i++) {
-		month = (month + 1) % 12;
 		labels.push(`${months[month].slice(0, 3)} ${year}`);
+		month = (month + 1) % 12;
 		if (month === 11) year++;
 	}
 
@@ -40,9 +40,3 @@ const drawIMC = (IMC, target, month, year) => {
 		},
 	});
 };
-
-let height = 1.62,
-	weighs = [80, 78, 75, 70, 74],
-	IMC = weighs.map((w) => w / (height * height));
-
-drawIMC(IMC, 24.9, 6, 2021);

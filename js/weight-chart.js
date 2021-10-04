@@ -5,9 +5,10 @@ const drawWeight = (weights, target, month, year) => {
 		maxValue = Math.max(...weights) + 20;
 
 	for (let i = 0; i < 12; i++) {
-		month = (month + 1) % 12;
 		labels.push(`${months[month].slice(0, 3)} ${year}`);
-		if (month === 11) year++;
+		month++;
+		if (month === 12) year++;
+		month %= 12;
 	}
 
 	return new Chart(weightCtx, {
@@ -40,5 +41,3 @@ const drawWeight = (weights, target, month, year) => {
 		},
 	});
 };
-
-drawWeight([80, 78, 75, 70, 74], 60, 6, 2021);

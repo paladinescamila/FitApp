@@ -4,8 +4,8 @@ const drawMuscleAndWater = (muscle, water, month, year) => {
 		labels = [];
 
 	for (let i = 0; i < 12; i++) {
-		month = (month + 1) % 12;
 		labels.push(`${months[month].slice(0, 3)} ${year}`);
+		month = (month + 1) % 12;
 		if (month === 11) year++;
 	}
 
@@ -39,8 +39,3 @@ const drawMuscleAndWater = (muscle, water, month, year) => {
 		},
 	});
 };
-
-let muscle = [40, 35, 45, 30, 50],
-	water = [30, 20, 14, 16, 34];
-
-drawMuscleAndWater(muscle, water, 6, 2021);
