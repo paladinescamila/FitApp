@@ -7,25 +7,32 @@ function validateEmail(email) {
 
 const signupForm = document.getElementById("signup");
 
-const saveUser = (user, pwd, name) => {
-    db.collection("users").doc(user).set({
+
+const saveUser = async (user, pwd, name) => {
+    await db.collection("users").doc(user).set({
         user:user,
         pwd:pwd
+    }).then(() => {
+        console.log("Listo el usuario!")
     });
-
-    db.collection("info").doc(user).set({
-        user:user,
-        name:name
-    });
+    
+    await db.collection("info").doc(user).set({
+            user:user,
+            name:name
+        }).then(() =>{
+            console.log("Lista la info!")
+        });
 }
-
-
+    
+// saveUser("hola@gmail.com", "hola", "hola")
+    
 //Revisar el parametro name, falta decidir en qué colección se va a guardar
 const findUser = (user, pwd, name, cent) => {
     let flag = cent;
+    var newWindow = false;
     const collectionRef = db.collection("users")
     try{
-        const response = collectionRef.where('user', '==', user).onSnapshot((snapshot) => {
+        const response = collectionRef.where('user', '==', user).onSnapshot(async (snapshot) => {
             if (snapshot.docs.length === 0 && flag){
                 saveUser(user, pwd, name)
                 alert("Usuario registrado con éxito!");
@@ -33,11 +40,11 @@ const findUser = (user, pwd, name, cent) => {
                 document.getElementById("name").value = ""
                 document.getElementById("user").value = ""
                 document.getElementById("pwd").value = ""
-                //pintarme el siguiente formulario
-                // console.log(window.location.href)
-                
+
+                // Dormimos el sistema un rato
+                await new Promise(r => setTimeout(r, 2000));
                 window.location.replace(window.location.href.slice(0,window.location.href.indexOf("signup.html"))+"form.html?user="+user)
-                // hola = "kfdsjgdksjfg"
+   
             }
             else if (snapshot.docs.length > 0 && flag){
                 alert("El correo electrónico ya se encuentra asociado a una cuenta, por favor, inicie sesión!");
@@ -47,6 +54,7 @@ const findUser = (user, pwd, name, cent) => {
     } catch (error){
         console.log(error)
     }
+
 }
 
 
@@ -60,7 +68,7 @@ signupForm.addEventListener("click", async(e) => {
             if(pwd.length < 8){
                 alert("La contraseña debe tener al menos 8 caracteres");
             } else{
-                await findUser(user.toLowerCase(),pwd,name,true);
+                findUser(user.toLowerCase(),pwd,name,true)
             }
         } else {
             alert("El texto ingresado no es un correo electrónico");

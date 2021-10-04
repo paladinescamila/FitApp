@@ -12,6 +12,7 @@ const searchUser = (user, pwd, cent) => {
                 flag = false;
             } else if(doc.data().pwd === pwd && flag) {
                 //pinteme el dashboard
+                window.location.replace(window.location.href.slice(0,window.location.href.indexOf("index.html"))+"pages/dashboard.html?user="+user)
                 console.log("Entramos!");
                 flag = false;
             }
