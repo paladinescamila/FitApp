@@ -156,7 +156,7 @@ sexElement.addEventListener("change", async (e) => {
 });
 
 weightElement.addEventListener("change", async (e) => {
-    await new Promise((r) => setTimeout(r, 3000));
+    await new Promise((r) => setTimeout(r, 2000));
     newWeight = parseFloat(weightElement.value);
     if (isNaN(newWeight) !== true && newWeight > 0) {
         await db
@@ -178,7 +178,7 @@ weightElement.addEventListener("change", async (e) => {
 });
 
 heightElement.addEventListener("change", async (e) => {
-    await new Promise((r) => setTimeout(r, 3000));
+    await new Promise((r) => setTimeout(r, 2000));
     newHeight = parseFloat(heightElement.value);
     if (isNaN(newHeight) !== true && newHeight > 0) {
         await db
