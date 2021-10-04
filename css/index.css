@@ -102,14 +102,9 @@ body {
 	color: #666;
 }
 
-@media (max-width: 470px) {
-	.sign-in-container {
-		width: 90%;
-	}
-
-	.sign-in-container > input,
-	.sign-in-container > button {
-		width: 80%;
+@media (max-width: 1400px) {
+	.logo {
+		transform: scale(0.9);
 	}
 }
 
@@ -124,8 +119,36 @@ body {
 }
 
 @media (max-width: 1200px) {
+	.logo {
+		transform: scale(0.8);
+	}
+
 	.running,
 	.cycling {
 		display: none;
+	}
+}
+
+@media (max-width: 700px) {
+	.logo {
+		top: 10px;
+	}
+}
+
+@media (max-width: 500px) {
+	.sign-in-container {
+		box-shadow: none;
+		width: 100%;
+	}
+}
+
+@media (max-width: 470px) {
+	.sign-in-container {
+		width: 90%;
+	}
+
+	.sign-in-container > input,
+	.sign-in-container > button {
+		width: 80%;
 	}
 }

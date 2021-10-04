@@ -112,7 +112,18 @@ input[type="number"] {
 	-moz-appearance: textfield;
 }
 
+@media (max-width: 1400px) {
+	.logo {
+		top: 10px;
+		transform: scale(0.9);
+	}
+}
+
 @media (max-width: 1300px) {
+	.form-container {
+		height: 490px;
+	}
+
 	.running {
 		width: 400px;
 	}
@@ -123,8 +134,30 @@ input[type="number"] {
 }
 
 @media (max-width: 1200px) {
+	.logo {
+		transform: scale(0.9);
+	}
+
 	.running,
 	.cycling {
 		display: none;
+	}
+}
+
+@media (max-width: 500px) {
+	.form-container {
+		box-shadow: none;
+		width: 100%;
+	}
+}
+
+@media (max-width: 470px) {
+	.form-container {
+		width: 90%;
+	}
+
+	.form-container > input,
+	.form-container > button {
+		width: 80%;
 	}
 }
