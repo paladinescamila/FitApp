@@ -6,14 +6,17 @@ if (email === null) {
 	window.location.replace(window.location.href.slice(0, window.location.href.indexOf("dashboard.html")) + "signup.html");
 }
 
-// Banner components
+// Banner and settings components
 let nameTitleElement = document.getElementById("name-title"),
 	emailTitleElement = document.getElementById("email-title"),
 	nameElement = document.getElementById("name"),
 	birthElement = document.getElementById("birth"),
 	sexElement = document.getElementById("sex"),
 	heightElement = document.getElementById("height"),
-	weightElement = document.getElementById("weight");
+	weightElement = document.getElementById("weight"),
+	oldPassElement = document.getElementById("old-pass"),
+	newPassElement = document.getElementById("new-pass"),
+	newPassElement2 = document.getElementById("new-pass-2");
 
 // Grid components
 let weightCardElement = document.getElementById("weight-card"),
@@ -72,7 +75,7 @@ const drawDashboard = async (email) => {
 			let waters = weights.map((w) => getWater(w, height, age)),
 				water = waters[nWeight - 1];
 
-			// Paint data in the dashboard banner
+			// Paint data in the dashboard banner and settings window
 			nameTitleElement.innerHTML = name;
 			emailTitleElement.innerHTML = email;
 			nameElement.value = name;
@@ -80,6 +83,9 @@ const drawDashboard = async (email) => {
 			sexElement.value = sex;
 			heightElement.value = height;
 			weightElement.value = weight;
+			oldPassElement.value = "";
+			newPassElement.value = "";
+			newPassElement2.value = "";
 
 			// Paint data in the grid
 			weightCardElement.innerHTML = weight + "Kg";
