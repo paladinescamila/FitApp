@@ -37,7 +37,7 @@ body {
 .form-container {
 	border-radius: 0.5em;
 	box-shadow: 0 0 10px 1px #ededed;
-	padding: 2em 1em;
+	padding: 2em 1em 2.5em 1em;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -83,13 +83,13 @@ body {
 	background-color: var(--theme-0);
 }
 
-.form-container > p,
-.form-container > a {
+.form-container p,
+.form-container a {
 	margin: 0;
 	color: #888;
 }
 
-.form-container > a:hover {
+.form-container a:hover {
 	color: #666;
 }
 
