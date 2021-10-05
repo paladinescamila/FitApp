@@ -107,6 +107,10 @@ body {
 	margin-right: 10px;
 }
 
+.forget-pass {
+	padding: 1em 0 0.5em 0;
+}
+
 @media (max-width: 1500px) {
 	.cycling {
 		right: 150px;
@@ -172,6 +176,14 @@ body {
 	.form-container {
 		box-shadow: none;
 		width: 100%;
+	}
+}
+
+@media (max-width: 400px) {
+	.form-container input,
+	.form-container select,
+	.form-container button {
+		width: 90%;
 	}
 }
 

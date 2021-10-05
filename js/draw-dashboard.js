@@ -10,7 +10,6 @@ if (email === null) {
 let nameTitleElement = document.getElementById("name-title"),
 	emailTitleElement = document.getElementById("email-title"),
 	nameElement = document.getElementById("name"),
-	emailElement = document.getElementById("email"),
 	birthElement = document.getElementById("birth"),
 	sexElement = document.getElementById("sex"),
 	heightElement = document.getElementById("height"),
@@ -76,8 +75,7 @@ const drawDashboard = async (email) => {
 			// Paint data in the dashboard banner
 			nameTitleElement.innerHTML = name;
 			emailTitleElement.innerHTML = email;
-			nameElement.value = name = name;
-			emailElement.value = email;
+			nameElement.value = name;
 			birthElement.value = birthDate;
 			sexElement.value = sex;
 			heightElement.value = height;

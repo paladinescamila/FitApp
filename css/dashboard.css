@@ -49,8 +49,9 @@ body {
 
 .go-to-settings {
 	border: none;
+	border-top: 1px solid var(--theme-2);
+	border-bottom: 1px solid var(--theme-2);
 	background-color: transparent;
-	border-radius: 0.3em;
 	color: var(--theme-0);
 	cursor: pointer;
 	margin: 1em 0;
@@ -58,7 +59,7 @@ body {
 }
 
 .go-to-settings:hover {
-	background-color: var(--theme-3);
+	background-color: var(--theme-4);
 }
 
 .header button:last-of-type {
