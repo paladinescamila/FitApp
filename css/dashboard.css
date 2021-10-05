@@ -95,6 +95,12 @@ body {
 	grid-area: IMC;
 }
 
+.IMC p:nth-of-type(3) {
+	padding: 0.01em 0.3em 0.1em 0.3em;
+	border-radius: 0.3em;
+	color: #fff;
+}
+
 .muscle {
 	grid-area: muscle;
 	color: rgb(73, 18, 150);
@@ -138,12 +144,11 @@ body {
 .IMC > p:nth-of-type(2),
 .muscle > p:nth-of-type(2),
 .water > p:nth-of-type(2) {
-	font-size: 3em;
+	font-size: 3.5em;
 	font-weight: 700;
 }
 
-.weight > p:nth-of-type(3),
-.IMC > p:nth-of-type(3) {
+.weight > p:nth-of-type(3) {
 	color: #999;
 }
 

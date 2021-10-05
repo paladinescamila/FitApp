@@ -25,7 +25,7 @@ let weightCardElement = document.getElementById("weight-card"),
 
 // IMC level styles
 const IMCLevelNames = ["Bajo peso", "Normal", "Sobrepeso", "Obeso", "Extremo obeso"],
-	IMCLevelColors = ["#0274d1", "#02d11e", "#d1b902", "#d15c02", "#d10202"];
+	IMCLevelColors = ["#0274d1", "#1dc233", "#e69900", "#e65800", "#d10202"];
 
 const drawDashboard = async (email) => {
 	// Data from Firebase
@@ -85,8 +85,9 @@ const drawDashboard = async (email) => {
 			weightCardElement.innerHTML = weight + "Kg";
 			targetWeightElement.innerHTML = "Peso objetivo: " + Math.floor(targetWeight) + "Kg";
 			imcCardElement.innerHTML = IMC.toFixed(2);
-			imcCardElement.style.color = IMCLevelColors[IMCLevel];
+			// imcCardElement.style.color = IMCLevelColors[IMCLevel];
 			imcLevelElement.innerHTML = IMCLevelNames[IMCLevel];
+			imcLevelElement.style.backgroundColor = IMCLevelColors[IMCLevel];
 			muscleElement.innerHTML = muscle.toFixed(0) + "%";
 			waterElement.innerHTML = water.toFixed(0) + "%";
 
