@@ -106,3 +106,13 @@ const drawDashboard = async (email) => {
 };
 
 drawDashboard(email);
+
+// Display banner
+
+document.getElementById("burger").addEventListener("click", () => {
+	document.getElementById("burger").style.display = "none";
+	document.getElementById("desk-header").style.display = "flex";
+	document.getElementById("desk-header").style.position = "absolute";
+	document.getElementById("desk-header").style.top = "0px";
+	document.getElementById("desk-header").style.width = "300px";
+});

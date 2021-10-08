@@ -7,8 +7,8 @@ document.getElementById("go-to-settings").addEventListener("click", (e) => {
 // Close settings window
 
 document.getElementById("close-settings").addEventListener("click", (e) => {
-	document.getElementById("settings").style.display = "none";
 	drawDashboard(email);
+	document.getElementById("settings").style.display = "none";
 });
 
 // Save settings to Firebase

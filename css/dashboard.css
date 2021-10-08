@@ -9,7 +9,7 @@ body {
 	position: relative;
 }
 
-.header {
+.desk-header {
 	margin: 0;
 	padding: 1em;
 	min-height: 100%;
@@ -62,7 +62,7 @@ body {
 	background-color: var(--theme-4);
 }
 
-.header button:last-of-type {
+.desk-header button:last-of-type {
 	width: 80%;
 }
 
@@ -77,6 +77,8 @@ body {
 
 .mobile-header img {
 	width: 50%;
+	cursor: pointer;
+	opacity: 0.7;
 }
 
 .stats {
@@ -191,7 +193,7 @@ body {
 }
 
 @media (max-width: 1300px) {
-	.header {
+	.desk-header {
 		padding: 1.5em 0.8em;
 	}
 	.stats {
@@ -218,7 +220,7 @@ body {
 }
 
 @media (max-width: 1000px) {
-	.header {
+	.desk-header {
 		display: none;
 	}
 
