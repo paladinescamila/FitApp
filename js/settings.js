@@ -18,7 +18,10 @@ document.getElementById("save-settings").addEventListener("click", async (e) => 
 		newBirth = new Date(birthElement.value),
 		newSex = sexElement.value,
 		newWeight = parseFloat(weightElement.value),
-		newHeight = parseFloat(heightElement.value);
+		newHeight = parseFloat(heightElement.value),
+		oldPass = oldPassElement.value,
+		newPass = newPassElement.value,
+		newPass2 = newPassElement2.value;
 
 	let validUpdate = 0;
 	newBirth.setDate(newBirth.getDate() + 1);
@@ -53,5 +56,23 @@ document.getElementById("save-settings").addEventListener("click", async (e) => 
 				drawDashboard(email);
 				document.getElementById("settings").style.display = "none";
 			});
+	}
+
+	let validatedPass = true;
+
+	if (validatedPass) {
+		if (newPass === newPass2) {
+			if (newPass.length < 8) {
+				alert("La contraseña debe tener 8 caracteres o más.");
+			} else {
+				await db.collection("users").doc(user).update({
+					pwd: newPass,
+				});
+			}
+		} else {
+			alert("Las contraseñas no coinciden.");
+		}
+	} else {
+		alert("La contraseña anterior no es correcta.");
 	}
 });
