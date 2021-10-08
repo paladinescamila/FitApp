@@ -2,7 +2,7 @@
 
 body {
 	display: grid;
-	grid-template-columns: 300px 5fr;
+	grid-template-columns: 300px 1fr;
 	background-color: #eee;
 	margin: 0;
 	height: 100vh;
@@ -64,6 +64,19 @@ body {
 
 .header button:last-of-type {
 	width: 80%;
+}
+
+.mobile-header {
+	margin: 0;
+	padding: 1em;
+	background-color: #fff;
+	grid-template-columns: 50px 1fr;
+	align-items: center;
+	display: none;
+}
+
+.mobile-header img {
+	width: 50%;
 }
 
 .stats {
@@ -201,5 +214,47 @@ body {
 	}
 	.card {
 		box-shadow: 0 0 5px 5px #ddd;
+	}
+}
+
+@media (max-width: 1000px) {
+	.header {
+		display: none;
+	}
+
+	.mobile-header {
+		display: grid;
+	}
+
+	body {
+		grid-template-columns: 1fr;
+		grid-template-rows: 50px 1fr;
+	}
+}
+
+@media (max-width: 450px) {
+	.weight > p:nth-of-type(2),
+	.IMC > p:nth-of-type(2),
+	.muscle > p:nth-of-type(2),
+	.water > p:nth-of-type(2) {
+		font-size: 3em;
+	}
+}
+
+@media (max-width: 350px) {
+	.weight > p:nth-of-type(1),
+	.IMC > p:nth-of-type(1),
+	.muscle > p:nth-of-type(1),
+	.water > p:nth-of-type(1) {
+		font-size: 0.9em;
+	}
+
+	.weight > p:nth-of-type(3),
+	.IMC > p:nth-of-type(3) {
+		font-size: 0.8em;
+	}
+
+	.stats {
+		grid-template-rows: repeat(2, 150px) repeat(3, 4fr);
 	}
 }
