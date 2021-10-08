@@ -84,7 +84,7 @@ body {
 .stats {
 	min-height: 100%;
 	margin: 0;
-	padding: 1.5em;
+	padding: 1em;
 	display: grid;
 	grid-gap: 1em;
 	grid-template-columns: repeat(4, 1fr);
@@ -97,8 +97,7 @@ body {
 }
 
 .card {
-	box-shadow: 0 0 10px 5px #ddd;
-	outline: 1px solid #eee;
+	outline: 1px solid #ddd;
 	background-color: #fff;
 }
 
@@ -118,12 +117,12 @@ body {
 
 .muscle {
 	grid-area: muscle;
-	color: rgb(73, 18, 150);
+	color: rgb(113, 0, 158);
 }
 
 .water {
 	grid-area: water;
-	color: rgba(18, 99, 150);
+	color: rgb(0, 102, 165);
 }
 
 .weight-chart {
@@ -164,7 +163,7 @@ body {
 }
 
 .weight > p:nth-of-type(3) {
-	color: #999;
+	color: #bbb;
 }
 
 .weight-chart,
@@ -213,9 +212,6 @@ body {
 @media (max-width: 1250px) {
 	.stats {
 		grid-gap: 0.5em;
-	}
-	.card {
-		box-shadow: 0 0 5px 5px #ddd;
 	}
 }
 
