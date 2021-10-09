@@ -47,20 +47,38 @@ body {
 	margin: 0 0 3em 0;
 }
 
-.go-to-settings {
-	border: none;
-	background-color: transparent;
-	color: var(--theme-0);
-	cursor: pointer;
-	padding: 1em;
+.banner-menu {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 1em 0;
+	border-top: 2px solid var(--theme-3);
 	width: 90%;
 }
 
-.go-to-settings:hover {
+.banner-menu button {
+	background-color: transparent;
+	color: #000;
+	border: none;
+	cursor: pointer;
+	padding: 1em;
+	width: 100%;
+	text-align: left;
+	display: flex;
+	align-items: center;
+}
+
+.banner-menu button:hover {
 	background-color: var(--theme-4);
 }
 
-.desk-header button:last-of-type {
+.banner-menu button img {
+	width: 20px;
+	margin-right: 15px;
+}
+
+.desk-header > button:last-of-type {
 	width: 80%;
 }
 

@@ -6,7 +6,7 @@ const getIMC = (weight, height) => {
 	return IMC;
 };
 
-// Músculo
+// Muscle
 const getMuscle = (weight, height, sex) => {
 	let muscle = -1;
 	if (sex === "m") muscle = ((1.1 * weight - 128 * (weight ** 2 / height ** 2)) * 100) / weight;
