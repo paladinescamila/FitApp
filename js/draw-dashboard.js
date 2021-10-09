@@ -22,7 +22,7 @@ let weightCardElement = document.getElementById("weight-card"),
     muscleElement = document.getElementById("muscle"),
     waterElement = document.getElementById("water");
 
-// Digit formatter
+// IMC level styles
 const IMCLevelNames = ["Bajo peso", "Normal", "Sobrepeso", "Obeso", "Extremo obeso"],
     IMCLevelColors = ["#0274d1", "#02d11e", "#d1b902", "#d15c02", "#d10202"];
 
@@ -94,28 +94,6 @@ const drawDashboard = async (email) => {
             drawMuscleAndWater(dates, muscles, waters);
         });
     });
-    ///////////////////////////////////////////////////////////////
-    // let name = "Juanito Pérez",
-    // 	birth = new Date(2000, 3, 10),
-    // 	sex = "m",
-    // 	height = 162,
-    // 	weights = [
-    // 		{date: new Date(2021, 6, 1), weight: 80},
-    // 		{date: new Date(2021, 7, 1), weight: 78},
-    // 		{date: new Date(2021, 8, 1), weight: 75},
-    // 		{date: new Date(2021, 9, 1), weight: 70},
-    // 		{date: new Date(2021, 10, 1), weight: 74},
-    // 		{date: new Date(2021, 11, 1), weight: 75},
-    // 		{date: new Date(2022, 0, 1), weight: 76},
-    // 		{date: new Date(2022, 1, 1), weight: 81},
-    // 		{date: new Date(2022, 2, 1), weight: 78},
-    // 		{date: new Date(2022, 3, 1), weight: 79},
-    // 		{date: new Date(2022, 4, 1), weight: 80},
-    // 		{date: new Date(2022, 5, 1), weight: 79},
-    // 		{date: new Date(2022, 6, 1), weight: 78},
-    // 		{date: new Date(2022, 7, 1), weight: 77},
-    // 		{date: new Date(2022, 8, 1), weight: 76},
-    // 	];
 };
 
 drawDashboard(email);
@@ -141,7 +119,6 @@ birthElement.addEventListener("change", async (e) => {
 });
 
 sexElement.addEventListener("change", async (e) => {
-    // await new Promise((r) => setTimeout(r, 2000));
     newSex = sexElement.value;
     await db
         .collection("info")
