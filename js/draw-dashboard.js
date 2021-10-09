@@ -6,17 +6,22 @@ if (email === null) {
 	window.location.replace(window.location.href.slice(0, window.location.href.indexOf("dashboard.html")) + "signup.html");
 }
 
-// Banner and settings components
+// Banner components
 let nameTitleElement = document.getElementById("name-title"),
-	emailTitleElement = document.getElementById("email-title"),
-	nameElement = document.getElementById("name"),
+	emailTitleElement = document.getElementById("email-title");
+
+// Settings components
+let nameElement = document.getElementById("name"),
 	birthElement = document.getElementById("birth"),
 	sexElement = document.getElementById("sex"),
 	heightElement = document.getElementById("height"),
-	weightElement = document.getElementById("weight"),
 	oldPassElement = document.getElementById("old-pass"),
 	newPassElement = document.getElementById("new-pass"),
 	newPassElement2 = document.getElementById("new-pass-2");
+
+// Add weight components
+let dateElement = document.getElementById("date"),
+	weightElement = document.getElementById("weight");
 
 // Grid components
 let weightCardElement = document.getElementById("weight-card"),
@@ -75,23 +80,28 @@ const drawDashboard = async (email) => {
 			let waters = weights.map((w) => getWater(w, height, age)),
 				water = waters[nWeight - 1];
 
-			// Paint data in the dashboard banner and settings window
+			// Paint data in the dashboard banner
 			nameTitleElement.innerHTML = name;
 			emailTitleElement.innerHTML = email;
+
+			// Paint data in the settings window
 			nameElement.value = name;
 			birthElement.value = birthDate;
 			sexElement.value = sex;
 			heightElement.value = height;
-			weightElement.value = weight;
 			oldPassElement.value = "";
 			newPassElement.value = "";
 			newPassElement2.value = "";
+
+			// Paint data in the add weight window
+			today = new Date();
+			dateElement.value = `${today.getFullYear()}-${format(today.getMonth() + 1)}-${format(today.getDate())}`;
+			weightElement.value = weight;
 
 			// Paint data in the grid
 			weightCardElement.innerHTML = weight + "Kg";
 			targetWeightElement.innerHTML = "Peso objetivo: " + Math.floor(targetWeight) + "Kg";
 			imcCardElement.innerHTML = IMC.toFixed(2);
-			// imcCardElement.style.color = IMCLevelColors[IMCLevel];
 			imcLevelElement.innerHTML = IMCLevelNames[IMCLevel];
 			imcLevelElement.style.backgroundColor = IMCLevelColors[IMCLevel];
 			muscleElement.innerHTML = muscle.toFixed(0) + "%";

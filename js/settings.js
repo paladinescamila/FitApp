@@ -18,7 +18,6 @@ document.getElementById("save-settings").addEventListener("click", async (e) => 
 	let newName = nameElement.value,
 		newBirth = new Date(birthElement.value),
 		newSex = sexElement.value,
-		newWeight = parseFloat(weightElement.value),
 		newHeight = parseFloat(heightElement.value),
 		oldPass = oldPassElement.value,
 		newPass = newPassElement.value,
@@ -34,14 +33,13 @@ document.getElementById("save-settings").addEventListener("click", async (e) => 
 	if (newBirth < new Date()) validUpdate++;
 	else alert("Inserte una fecha válida.");
 
-	if (!isNaN(newHeight) && newHeight > 0) validUpdate++;
-	else alert("Inserte una estatura válida.");
-
-	if (!isNaN(newWeight) && newWeight > 0) validUpdate++;
-	else alert("Inserte un peso válido.");
+	if (!isNaN(newHeight) && newHeight > 0) {
+		if (newHeight >= 100 && newHeight <= 300) validUpdate++;
+		else alert("Inserte una estatura entre 100 y 300.");
+	} else alert("Inserte una estatura válida.");
 
 	// Update settings
-	if (validUpdate == 4) {
+	if (validUpdate == 3) {
 		await db
 			.collection("info")
 			.doc(user)
@@ -50,10 +48,6 @@ document.getElementById("save-settings").addEventListener("click", async (e) => 
 				birth: firebase.firestore.Timestamp.fromDate(newBirth),
 				gender: newSex,
 				height: newHeight,
-				weights: firebase.firestore.FieldValue.arrayUnion({
-					date: firebase.firestore.Timestamp.fromDate(new Date()),
-					weight: newWeight,
-				}),
 			})
 			.then(() => {
 				if (oldPass.length !== 0 || newPass.length !== 0 || newPass2.length !== 0) {
@@ -96,3 +90,36 @@ const changePassword = async (oldPass, newPass, newPass2) => {
 		});
 	});
 };
+
+// Open add weight window
+
+document.getElementById("go-to-add-weight").addEventListener("click", (e) => {
+	document.getElementById("add-weight").style.display = "flex";
+});
+
+// Close add weight window
+
+document.getElementById("close-add-weight").addEventListener("click", (e) => {
+	drawDashboard(email);
+	document.getElementById("add-weight").style.display = "none";
+});
+
+// Save weight to Firebase
+
+document.getElementById("save-weight").addEventListener("click", async (e) => {
+	let newDate = document.getElementById("date").value,
+		newWeight = parseFloat(weight.value),
+		validUpdate = 0;
+
+	if (newDate <= new Date()) validUpdate++;
+	else alert("Ingrese una fecha válida");
+
+	if (!isNaN(newWeight) && newWeight > 0) {
+		if (newWeight >= 25 && newWeight <= 600) validUpdate++;
+		else alert("Inserte un peso entre 25 y 600.");
+	} else alert("Inserte un peso válido.");
+
+	// if (validUpdate == 2)
+	// drawDashboard(email);
+	// document.getElementById("add-weight").style.display = "none";
+});

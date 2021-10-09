@@ -1,19 +1,29 @@
 // IMC
-const getIMC = (weight, height) => weight / (height / 100) ** 2;
+const getIMC = (weight, height) => {
+	let IMC = weight / (height / 100) ** 2;
+	IMC = Math.max(IMC, 0);
+	IMC = Math.min(IMC, 600);
+	return IMC;
+};
 
 // Músculo
 const getMuscle = (weight, height, sex) => {
-	if (sex === "m") {
-		return ((1.1 * weight - 128 * (weight ** 2 / height ** 2)) * 100) / weight;
-	} else if (sex === "f") {
-		return ((1.07 * weight - 148 * (weight ** 2 / height ** 2)) * 100) / weight;
-	} else {
-		return -1;
-	}
+	let muscle = -1;
+	if (sex === "m") muscle = ((1.1 * weight - 128 * (weight ** 2 / height ** 2)) * 100) / weight;
+	else if (sex === "f") muscle = ((1.07 * weight - 148 * (weight ** 2 / height ** 2)) * 100) / weight;
+
+	muscle = Math.max(muscle, 0);
+	muscle = Math.min(muscle, 150);
+	return muscle;
 };
 
 // Water
-const getWater = (weight, height, age) => 2.447 - 0.09156 * age + 0.1074 * height + 0.3362 * weight;
+const getWater = (weight, height, age) => {
+	let water = 2.447 - 0.09156 * age + 0.1074 * height + 0.3362 * weight;
+	water = Math.max(water, 0);
+	water = Math.min(water, 250);
+	return water;
+};
 
 // IMC classification
 const getIMCLevel = (IMC) => {

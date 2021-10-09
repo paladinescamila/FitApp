@@ -78,6 +78,10 @@ saveForm.addEventListener("click", async (e) => {
 			alert("El peso y estatura deben ser números.");
 		} else if (weight < 0 || height < 0) {
 			alert("El peso y la estatura deben ser mayores que 0.");
+		} else if (weight < 25 || weight > 600) {
+			alert("El peso debe estar entre 26 y 600.");
+		} else if (height < 100 || height > 300) {
+			alert("La estatura debe estar entre 100 y 300.");
 		} else {
 			//Guardar datos en la colección info del usuario registrado
 			console.log("Entramos!");

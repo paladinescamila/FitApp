@@ -16,6 +16,7 @@
 				<img src="../img/Logo.svg" alt="FitApp" class="logo" />
 				<p class="name" id="name-title"></p>
 				<p class="email" id="email-title"></p>
+				<button class="go-to-settings" id="go-to-add-weight">Nuevo peso</button>
 				<button class="go-to-settings" id="go-to-settings">Configuraciones</button>
 			</div>
 			<button id="sign-out" class="solid-button">Salir</button>
@@ -56,7 +57,7 @@
 				<canvas id="muscle-water-chart"></canvas>
 			</div>
 		</div>
-		<div class="dar-bg" id="settings">
+		<div class="dark-bg" id="settings">
 			<div class="settings">
 				<img src="/img/x.svg" alt="Close" id="close-settings" />
 				<p class="settings-title">Configuraciones</p>
@@ -72,8 +73,6 @@
 					</select>
 					<p>Estatura (cm)</p>
 					<input type="number" class="input" id="height" />
-					<p>Peso (Kg)</p>
-					<input type="number" class="input" id="weight" />
 				</div>
 				<div class="change-pass">
 					<p>Cambiar contraseña</p>
@@ -87,6 +86,19 @@
 					</div>
 				</div>
 				<button class="solid-button" id="save-settings">Guardar</button>
+			</div>
+		</div>
+		<div class="dark-bg" id="add-weight">
+			<div class="add-weight">
+				<img src="/img/x.svg" alt="Close" id="close-add-weight" />
+				<p class="add-weight-title">Nuevo peso</p>
+				<div class="data-container-2">
+					<p>Fecha</p>
+					<input type="date" class="input" id="date" />
+					<p>Peso (Kg)</p>
+					<input type="number" class="input" id="weight" />
+				</div>
+				<button class="solid-button" id="save-weight">Agrear</button>
 			</div>
 		</div>
 		<script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-app.js"></script>
