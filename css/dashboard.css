@@ -60,22 +60,25 @@ body {
 .banner-menu button {
 	background-color: transparent;
 	color: #000;
-	border: none;
-	cursor: pointer;
-	padding: 1em;
 	width: 100%;
+	border: none;
+	padding: 1em;
+	border-radius: 0.3em;
+	cursor: pointer;
 	text-align: left;
 	display: flex;
 	align-items: center;
+	opacity: 0.75;
 }
 
 .banner-menu button:hover {
 	background-color: var(--theme-4);
+	opacity: 1;
 }
 
 .banner-menu button img {
-	width: 20px;
-	margin-right: 15px;
+	width: 15px;
+	margin-right: 10px;
 }
 
 .desk-header > button:last-of-type {
@@ -247,6 +250,13 @@ body {
 }
 
 @media (max-width: 450px) {
+	.weight > p:nth-of-type(1),
+	.IMC > p:nth-of-type(1),
+	.muscle > p:nth-of-type(1),
+	.water > p:nth-of-type(1) {
+		font-size: 0.9em;
+	}
+
 	.weight > p:nth-of-type(2),
 	.IMC > p:nth-of-type(2),
 	.muscle > p:nth-of-type(2),
@@ -260,7 +270,14 @@ body {
 	.IMC > p:nth-of-type(1),
 	.muscle > p:nth-of-type(1),
 	.water > p:nth-of-type(1) {
-		font-size: 0.9em;
+		font-size: 0.7em;
+	}
+
+	.weight > p:nth-of-type(2),
+	.IMC > p:nth-of-type(2),
+	.muscle > p:nth-of-type(2),
+	.water > p:nth-of-type(2) {
+		font-size: 2.7em;
 	}
 
 	.weight > p:nth-of-type(3),

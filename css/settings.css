@@ -112,3 +112,17 @@
 		width: 90%;
 	}
 }
+
+@media (max-width: 450px) {
+	.data-container,
+	.change-pass-container {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (max-width: 400px) {
+	.data-container-2 {
+		grid-template-columns: 1fr;
+		grid-gap: 0.5em;
+	}
+}
