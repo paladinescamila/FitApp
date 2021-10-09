@@ -1,0 +1,198 @@
+@import url(main.css);
+
+body {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+}
+
+/* Main mages */
+
+.logo {
+	width: 150px;
+	margin: 2em 0;
+}
+
+.running {
+	position: absolute;
+	opacity: 0.5;
+	width: 450px;
+	bottom: 0;
+	left: 1em;
+}
+
+.cycling {
+	position: absolute;
+	opacity: 0.5;
+	width: 250px;
+	top: 250px;
+	right: 170px;
+}
+
+/* Forms  */
+
+.form-container {
+	border-radius: 0.5em;
+	box-shadow: 0 0 10px 1px #ededed;
+	padding: 2em 1em 2.5em 1em;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 450px;
+	height: fit-content;
+}
+
+.form-container > h1 {
+	font-weight: 700;
+	font-size: 2.5em;
+	margin: 0 0 1em 0;
+	color: #222;
+}
+
+.form-container input,
+.form-container select {
+	border: none;
+	background-color: #efefef;
+	padding: 1em;
+	margin: 0.3em 0;
+	width: 75%;
+	border-radius: 0.3em;
+}
+
+.form-container input:focus {
+	outline: 2px solid var(--theme-2);
+}
+
+.form-container button {
+	border: none;
+	padding: 1em;
+	background-color: var(--theme-1);
+	color: #fff;
+	font-weight: 500;
+	cursor: pointer;
+	border-radius: 0.3em;
+	width: 75%;
+	margin: 1em 0;
+}
+
+.form-container button:hover {
+	background-color: var(--theme-0);
+}
+
+.form-container p,
+.form-container a {
+	margin: 0;
+	color: #888;
+}
+
+.form-container a:hover {
+	color: #666;
+}
+
+/* Others  */
+.sex,
+.birth {
+	width: 75%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.sex > p,
+.birth > p {
+	margin-right: 10px;
+}
+
+.forget-pass {
+	padding: 1em 0 0.5em 0;
+}
+
+@media (max-width: 1500px) {
+	.cycling {
+		right: 150px;
+	}
+}
+
+@media (max-width: 1400px) {
+	.cycling {
+		right: 120px;
+	}
+}
+
+@media (max-width: 1300px) {
+	.running {
+		width: 400px;
+	}
+
+	.cycling {
+		right: 100px;
+	}
+}
+
+@media (max-width: 1200px) {
+	.running {
+		width: 350px;
+	}
+
+	.cycling {
+		right: 70px;
+	}
+}
+
+@media (max-width: 1100px) {
+	.running {
+		width: 300px;
+	}
+
+	.cycling {
+		width: 200px;
+		right: 60px;
+	}
+}
+
+@media (max-width: 1000px) {
+	.running {
+		width: 250px;
+	}
+
+	.cycling {
+		width: 170px;
+		right: 50px;
+	}
+}
+
+@media (max-width: 950px) {
+	.running,
+	.cycling {
+		display: none;
+	}
+}
+
+@media (max-width: 500px) {
+	.form-container {
+		box-shadow: none;
+		width: 100%;
+	}
+}
+
+@media (max-width: 400px) {
+	.form-container input,
+	.form-container select,
+	.form-container button {
+		width: 90%;
+	}
+}
+
+@media (max-width: 350px) {
+	.form-container {
+		padding: 0;
+	}
+
+	.form-container > h1 {
+		font-size: 2em;
+	}
+}

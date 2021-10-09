@@ -6,13 +6,17 @@ if (email === null) {
     window.location.replace(window.location.href.slice(0, window.location.href.indexOf("dashboard.html")) + "signup.html");
 }
 
-// Banner components
-let nameElement = document.getElementById("name"),
-    emailElement = document.getElementById("email"),
+// Banner and settings components
+let nameTitleElement = document.getElementById("name-title"),
+    emailTitleElement = document.getElementById("email-title"),
+    nameElement = document.getElementById("name"),
     birthElement = document.getElementById("birth"),
     sexElement = document.getElementById("sex"),
     heightElement = document.getElementById("height"),
-    weightElement = document.getElementById("weight");
+    weightElement = document.getElementById("weight"),
+    oldPassElement = document.getElementById("old-pass"),
+    newPassElement = document.getElementById("new-pass"),
+    newPassElement2 = document.getElementById("new-pass-2");
 
 // Grid components
 let weightCardElement = document.getElementById("weight-card"),
@@ -24,7 +28,7 @@ let weightCardElement = document.getElementById("weight-card"),
 
 // IMC level styles
 const IMCLevelNames = ["Bajo peso", "Normal", "Sobrepeso", "Obeso", "Extremo obeso"],
-    IMCLevelColors = ["#0274d1", "#02d11e", "#d1b902", "#d15c02", "#d10202"];
+    IMCLevelColors = ["#0274d1", "#1dc233", "#e69900", "#e65800", "#d10202"];
 
 const drawDashboard = async (email) => {
     // Data from Firebase
@@ -71,20 +75,25 @@ const drawDashboard = async (email) => {
             let waters = weights.map((w) => getWater(w, height, age)),
                 water = waters[nWeight - 1];
 
-            // Paint data in the dashboard banner
-            nameElement.innerHTML = name;
-            emailElement.innerHTML = email;
+            // Paint data in the dashboard banner and settings window
+            nameTitleElement.innerHTML = name;
+            emailTitleElement.innerHTML = email;
+            nameElement.value = name;
             birthElement.value = birthDate;
             sexElement.value = sex;
             heightElement.value = height;
             weightElement.value = weight;
+            oldPassElement.value = "";
+            newPassElement.value = "";
+            newPassElement2.value = "";
 
             // Paint data in the grid
             weightCardElement.innerHTML = weight + "Kg";
             targetWeightElement.innerHTML = "Peso objetivo: " + Math.floor(targetWeight) + "Kg";
             imcCardElement.innerHTML = IMC.toFixed(2);
-            imcCardElement.style.color = IMCLevelColors[IMCLevel];
+            // imcCardElement.style.color = IMCLevelColors[IMCLevel];
             imcLevelElement.innerHTML = IMCLevelNames[IMCLevel];
+            imcLevelElement.style.backgroundColor = IMCLevelColors[IMCLevel];
             muscleElement.innerHTML = muscle.toFixed(0) + "%";
             waterElement.innerHTML = water.toFixed(0) + "%";
 
@@ -98,77 +107,12 @@ const drawDashboard = async (email) => {
 
 drawDashboard(email);
 
-birthElement.addEventListener("change", async (e) => {
-    await new Promise((r) => setTimeout(r, 2000));
-    newBirth = new Date(birthElement.value);
-    newBirth = new Date(newBirth.getFullYear(), newBirth.getMonth(), newBirth.getDate() + 1);
-    if (newBirth < new Date()) {
-        await db
-            .collection("info")
-            .doc(user)
-            .update({
-                birth: firebase.firestore.Timestamp.fromDate(newBirth),
-            })
-            .then(() => {
-                console.log("Fecha de nacimiento actualizada!");
-                window.location.reload();
-            });
-    } else {
-        alert("Inserte una fecha válida");
-    }
-});
+// Display banner
 
-sexElement.addEventListener("change", async (e) => {
-    newSex = sexElement.value;
-    await db
-        .collection("info")
-        .doc(user)
-        .update({
-            gender: newSex,
-        })
-        .then(() => {
-            console.log("Género actualizado!");
-            window.location.reload();
-        });
-});
-
-weightElement.addEventListener("change", async (e) => {
-    await new Promise((r) => setTimeout(r, 2000));
-    newWeight = parseFloat(weightElement.value);
-    if (isNaN(newWeight) !== true && newWeight > 0) {
-        await db
-            .collection("info")
-            .doc(user)
-            .update({
-                weights: firebase.firestore.FieldValue.arrayUnion({
-                    date: firebase.firestore.Timestamp.fromDate(new Date()),
-                    weight: newWeight,
-                }),
-            })
-            .then(() => {
-                console.log("Peso actualizado!");
-                window.location.reload();
-            });
-    } else {
-        alert("Ingrese un peso válido");
-    }
-});
-
-heightElement.addEventListener("change", async (e) => {
-    await new Promise((r) => setTimeout(r, 2000));
-    newHeight = parseFloat(heightElement.value);
-    if (isNaN(newHeight) !== true && newHeight > 0) {
-        await db
-            .collection("info")
-            .doc(user)
-            .update({
-                height: newHeight,
-            })
-            .then(() => {
-                console.log("Estatura actualizado!");
-                window.location.reload();
-            });
-    } else {
-        alert("Ingrese un peso válido");
-    }
+document.getElementById("burger").addEventListener("click", () => {
+    document.getElementById("burger").style.display = "none";
+    document.getElementById("desk-header").style.display = "flex";
+    document.getElementById("desk-header").style.position = "absolute";
+    document.getElementById("desk-header").style.top = "0px";
+    document.getElementById("desk-header").style.width = "300px";
 });

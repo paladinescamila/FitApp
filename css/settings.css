@@ -1,0 +1,71 @@
+@import url(main.css);
+
+.dar-bg {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.7);
+	display: none;
+	justify-content: center;
+	align-items: center;
+}
+
+.settings {
+	width: 600px;
+	height: fit-content;
+	padding: 1em 2em;
+	background-color: #fff;
+	border-radius: 0.5em;
+	position: relative;
+	display: grid;
+	grid-gap: 2.5em;
+}
+
+.settings-title {
+	font-size: 1.5em;
+	font-weight: 700;
+	text-align: center;
+}
+
+.data-container {
+	display: grid;
+	grid-gap: 0.3em 1em;
+	grid-template-columns: 1fr 3fr;
+	align-items: center;
+	margin-top: 0;
+}
+
+.change-pass-container {
+	display: grid;
+	grid-gap: 0.3em 1em;
+	grid-template-columns: 1fr 1fr;
+}
+
+.settings img {
+	position: absolute;
+	width: 15px;
+	top: 1.5em;
+	right: 1.5em;
+	opacity: 0.7;
+	cursor: pointer;
+}
+
+.settings img:hover {
+	opacity: 1;
+}
+
+.change-pass > p {
+	font-size: 1.1em;
+	padding-bottom: 0.5em;
+	border-bottom: 2px solid var(--theme-1);
+	margin-bottom: 1em;
+	font-weight: 700;
+}
+
+@media (max-width: 650px) {
+	.settings {
+		width: 90%;
+	}
+}
