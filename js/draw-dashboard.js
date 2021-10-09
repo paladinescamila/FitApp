@@ -126,3 +126,10 @@ document.getElementById("burger").addEventListener("click", () => {
 	document.getElementById("desk-header").style.top = "0px";
 	document.getElementById("desk-header").style.width = "300px";
 });
+
+// Hide banner
+
+document.getElementById("close-header").addEventListener("click", () => {
+	document.getElementById("burger").style.display = "block";
+	document.getElementById("desk-header").style.display = "none";
+});
