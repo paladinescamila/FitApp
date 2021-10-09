@@ -40,7 +40,6 @@ const findUser = (user, pwd, name, cent) => {
 		const response = collectionRef.where("user", "==", user).onSnapshot(async (snapshot) => {
 			if (snapshot.docs.length === 0 && flag) {
 				saveUser(user, pwd, name);
-				alert("Usuario registrado con éxito."); // ¿Es necesario ponerlo?
 				flag = false;
 				document.getElementById("name").value = "";
 				document.getElementById("user").value = "";

@@ -42,6 +42,9 @@ const updateUserInfo = async (user, weight, height, gender, birth) => {
 	birth = new Date(birth);
 	birth = new Date(birth.getFullYear(), birth.getMonth(), birth.getDate() + 1);
 	birth = firebase.firestore.Timestamp.fromDate(birth);
+
+	let date = new Date();
+	date = new Date(date.getFullYear(), date.getMonth(), date.getDate());
 	// console.log(birth);
 	await db
 		.collection("info")
@@ -52,11 +55,11 @@ const updateUserInfo = async (user, weight, height, gender, birth) => {
 			birth: birth,
 			weights: [
 				{
-					date: firebase.firestore.Timestamp.fromDate(new Date()),
+					date: firebase.firestore.Timestamp.fromDate(date),
 					weight: weight,
 				},
 			],
-			online: false,
+			online: true,
 		})
 		.then(() => {
 			console.log("Listos los datos del usuario!");
@@ -79,7 +82,7 @@ saveForm.addEventListener("click", async (e) => {
 		} else if (weight < 0 || height < 0) {
 			alert("El peso y la estatura deben ser mayores que 0.");
 		} else if (weight < 25 || weight > 600) {
-			alert("El peso debe estar entre 26 y 600.");
+			alert("El peso debe estar entre 25 y 600.");
 		} else if (height < 100 || height > 300) {
 			alert("La estatura debe estar entre 100 y 300.");
 		} else {
@@ -89,7 +92,7 @@ saveForm.addEventListener("click", async (e) => {
 			//Esperar a que se escriban los datos del usuario
 			await new Promise((r) => setTimeout(r, 1000));
 			//Pasar al dashboard
-			window.location.replace(window.location.href.slice(0, window.location.href.indexOf(window.location.pathname)));
+			window.location.replace(window.location.href.slice(0, window.location.href.indexOf("form.html")) + "dashboard.html?user=" + user);
 		}
 	} else {
 		alert("Por favor, llena todos los campos.");

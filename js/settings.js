@@ -91,6 +91,78 @@ const changePassword = async (oldPass, newPass, newPass2) => {
 	});
 };
 
+// Update weight and date
+
+const updateWeightDate = (user, dateToFind, newWeight, cent) => {
+	var queryFindDate = db.collection("info").where("user", "==", user);
+	let flag = cent;
+	queryFindDate.get().then((snapshot) => {
+		snapshot.forEach(async (doc) => {
+			if (flag) {
+				let weights = doc.data().weights;
+
+				weights = weights.map((element) => {
+					return {
+						date: element.date.toDate(),
+						weight: element.weight,
+					};
+				});
+
+				// weights = weights.sort((a, b) => a.date - b.date);
+
+				//Buscamos el objeto que tenga la fecha del último registro del mismo día
+				let objectDate = weights.find(
+					(element) => element.date.getFullYear() === dateToFind.getFullYear() && element.date.getMonth() === dateToFind.getMonth() && element.date.getDate() === dateToFind.getDate() + 1
+				);
+				let newDate = new Date(dateToFind);
+				newDate = new Date(newDate.getFullYear(), newDate.getMonth(), newDate.getDate() + 1); //Revisar si todo ese manejo de días (tantos +1) afecta la fecha real del pesaje
+
+				//Construimos el objeto con el timestamp a remover
+
+				if (objectDate === undefined) {
+					newDate = firebase.firestore.Timestamp.fromDate(newDate);
+					await db
+						.collection("info")
+						.doc(user)
+						.update({
+							weights: firebase.firestore.FieldValue.arrayUnion({
+								date: newDate,
+								weight: newWeight,
+							}),
+						});
+				} else {
+					//Construimos el objeto con el timestamp a remover
+					objectDate.date = firebase.firestore.Timestamp.fromDate(newDate);
+
+					await db
+						.collection("info")
+						.doc(user)
+						.update({
+							weights: firebase.firestore.FieldValue.arrayRemove(objectDate),
+						});
+
+					await new Promise((r) => setTimeout(r, 1500));
+
+					await db
+						.collection("info")
+						.doc(user)
+						.update({
+							weights: firebase.firestore.FieldValue.arrayUnion({
+								date: objectDate.date,
+								weight: newWeight,
+							}),
+						});
+
+					await new Promise((r) => setTimeout(r, 1500));
+				}
+				drawDashboard(email);
+				document.getElementById("add-weight").style.display = "none";
+				flag = false;
+			}
+		});
+	});
+};
+
 // Open add weight window
 
 document.getElementById("go-to-add-weight").addEventListener("click", (e) => {
@@ -107,19 +179,17 @@ document.getElementById("close-add-weight").addEventListener("click", (e) => {
 // Save weight to Firebase
 
 document.getElementById("save-weight").addEventListener("click", async (e) => {
-	let newDate = document.getElementById("date").value,
+	let newDate = new Date(document.getElementById("date").value),
 		newWeight = parseFloat(weight.value),
 		validUpdate = 0;
 
 	if (newDate <= new Date()) validUpdate++;
-	else alert("Ingrese una fecha válida");
+	else alert("Ingrese una fecha válida.");
 
 	if (!isNaN(newWeight) && newWeight > 0) {
 		if (newWeight >= 25 && newWeight <= 600) validUpdate++;
 		else alert("Inserte un peso entre 25 y 600.");
 	} else alert("Inserte un peso válido.");
 
-	// if (validUpdate == 2)
-	// drawDashboard(email);
-	// document.getElementById("add-weight").style.display = "none";
+	if (validUpdate == 2) updateWeightDate(user, newDate, newWeight, true);
 });
