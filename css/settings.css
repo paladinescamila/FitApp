@@ -43,6 +43,7 @@
 	display: grid;
 	grid-gap: 0.3em 1em;
 	grid-template-columns: 1fr 1fr;
+	align-items: center;
 }
 
 .settings img {
