@@ -117,8 +117,6 @@ body {
 
 .stats {
 	height: 100vh;
-	overflow-y: scroll;
-	scrollbar-width: none;
 	margin: 0;
 	padding: 1em;
 	display: grid;
@@ -232,6 +230,8 @@ body {
 		padding: 1.5em 0.8em;
 	}
 	.stats {
+		overflow-y: scroll;
+		scrollbar-width: none;
 		padding: 1em;
 		grid-template-columns: repeat(2, 1fr);
 		grid-template-rows: repeat(2, 150px) repeat(3, 2fr);
