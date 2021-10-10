@@ -9,6 +9,7 @@ const getIMC = (weight, height) => {
 // Muscle
 const getMuscle = (weight, height, sex) => {
 	let muscle = -1;
+
 	if (sex === "m") muscle = ((1.1 * weight - 128 * (weight ** 2 / height ** 2)) * 100) / weight;
 	else if (sex === "f") muscle = ((1.07 * weight - 148 * (weight ** 2 / height ** 2)) * 100) / weight;
 
@@ -27,12 +28,15 @@ const getWater = (weight, height, age) => {
 
 // IMC classification
 const getIMCLevel = (IMC) => {
-	if ((IMC >= 0) & (IMC < 18.5)) return 0;
-	else if ((IMC >= 18.5) & (IMC <= 24.9)) return 1;
-	else if ((IMC >= 25) & (IMC <= 29.9)) return 2;
-	else if ((IMC >= 30) & (IMC <= 34.9)) return 3;
-	else if (IMC >= 35) return 4;
-	else return -1;
+	let IMCLevel = -1;
+
+	if ((IMC >= 0) & (IMC < 18.5)) IMCLevel = 0;
+	else if ((IMC >= 18.5) & (IMC <= 24.9)) IMCLevel = 1;
+	else if ((IMC >= 25) & (IMC <= 29.9)) IMCLevel = 2;
+	else if ((IMC >= 30) & (IMC <= 34.9)) IMCLevel = 3;
+	else if (IMC >= 35) IMCLevel = 4;
+
+	return IMCLevel;
 };
 
 // Two digit formatter
