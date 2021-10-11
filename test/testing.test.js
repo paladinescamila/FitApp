@@ -7,8 +7,8 @@ describe("getMuscle", () => {
 	test("w = 80,\th = 172,  s = f\t---> 66.98", () => expect(getMuscle(80, 172, "f")).toBe(66.98));
 	test("w = 600,\th = 150,  s = m\t---> 0", () => expect(getMuscle(600, 150, "m")).toBe(0));
 	test("w = 600,\th = 150,  s = f\t---> 0", () => expect(getMuscle(600, 150, "f")).toBe(0));
-	test("w = 25,\th = 300,  s = m\t---> 0", () => expect(getMuscle(25, 300, "m")).toBe(100));
-	test("w = 25,\th = 300,  s = f\t---> 0", () => expect(getMuscle(25, 300, "f")).toBe(100));
+	test("w = 25,\th = 300,  s = m\t---> 100", () => expect(getMuscle(25, 300, "m")).toBe(100));
+	test("w = 25,\th = 300,  s = f\t---> 100", () => expect(getMuscle(25, 300, "f")).toBe(100));
 });
 
 // getIMCLevel tests

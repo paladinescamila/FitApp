@@ -3,10 +3,9 @@ const getMuscle = (weight, height, sex) => {
 	let muscle = 0;
 
 	if (sex === "m") muscle = ((1.1 * weight - 128 * (weight ** 2 / height ** 2)) * 100) / weight;
-	else if (sex === "f") muscle = ((1.07 * weight - 148 * (weight ** 2 / height ** 2)) * 100) / weight;
+	else muscle = ((1.07 * weight - 148 * (weight ** 2 / height ** 2)) * 100) / weight;
 
 	if (muscle < 0) muscle = 0;
-
 	if (muscle > 100) muscle = 100;
 
 	return parseFloat(muscle.toFixed(2));
