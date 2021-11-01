@@ -1,3 +1,13 @@
+// IMC
+const getIMC = (weight, height) => {
+	let IMC = weight / (height / 100) ** 2;
+
+	if (IMC < 0) IMC = 0;
+	if (IMC > 600) IMC = 600;
+
+	return parseFloat(IMC.toFixed(2));
+};
+
 // Muscle
 const getMuscle = (weight, height, sex) => {
 	let muscle = 0;
@@ -9,6 +19,16 @@ const getMuscle = (weight, height, sex) => {
 	if (muscle > 100) muscle = 100;
 
 	return parseFloat(muscle.toFixed(2));
+};
+
+// Water
+const getWater = (weight, height, age) => {
+	let water = 2.447 - 0.09156 * age + 0.1074 * height + 0.3362 * weight;
+
+	if (water < 0) water = 0;
+	if (water > 250) water = 250;
+
+	return parseFloat(water.toFixed(2));
 };
 
 // IMC classification
@@ -25,5 +45,7 @@ const getIMCLevel = (IMC) => {
 };
 
 // Export functions to test
+exports.getIMC = getIMC;
 exports.getMuscle = getMuscle;
+exports.getWater = getWater;
 exports.getIMCLevel = getIMCLevel;

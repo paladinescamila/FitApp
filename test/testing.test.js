@@ -1,5 +1,12 @@
 const {expect} = require("@jest/globals");
-const {getMuscle, getIMCLevel} = require("./to_test");
+const {getMuscle, getIMCLevel, getIMC, getWater} = require("./to_test");
+
+// getIMC tests
+describe("getIMC", () => {
+	test("w = 60,\th = 160\t---> 23.44", () => expect(getIMC(60, 160)).toBe(23.44));
+	test("w = -10,\th = 150\t---> 0", () => expect(getIMC(-10, 150)).toBe(0));
+	test("w = 700,\th = 100\t---> 700", () => expect(getIMC(700, 100)).toBe(600));
+});
 
 // getMuscle tests
 describe("getMuscle", () => {
@@ -9,6 +16,13 @@ describe("getMuscle", () => {
 	test("w = 600,\th = 150,  s = f\t---> 0", () => expect(getMuscle(600, 150, "f")).toBe(0));
 	test("w = 25,\th = 300,  s = m\t---> 100", () => expect(getMuscle(25, 300, "m")).toBe(100));
 	test("w = 25,\th = 300,  s = f\t---> 100", () => expect(getMuscle(25, 300, "f")).toBe(100));
+});
+
+// getWater tests
+describe("getWater", () => {
+	test("w = 60,\th = 160,  a = 30  ---> 37.06", () => expect(getWater(60, 160, 30)).toBe(37.06));
+	test("w = 70,\th = 170,  a = 500 ---> 0", () => expect(getWater(70, 170, 500)).toBe(0));
+	test("w = 700,\th = 165,  a = 20  ---> 250", () => expect(getWater(700, 165, 20)).toBe(250));
 });
 
 // getIMCLevel tests
