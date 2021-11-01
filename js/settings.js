@@ -4,11 +4,18 @@ document.getElementById("go-to-settings").addEventListener("click", (e) => {
 	document.getElementById("settings").style.display = "flex";
 });
 
-// Close settings window
+// Close settings window (with "x" button)
 
 document.getElementById("close-settings").addEventListener("click", (e) => {
-	drawDashboard(email);
 	document.getElementById("settings").style.display = "none";
+});
+
+// Close settings window (clicking outside the box)
+
+document.getElementById("settings").addEventListener("click", (e) => {
+	if (!document.getElementById("settings").firstElementChild.contains(e.target)) {
+		document.getElementById("close-settings").click();
+	}
 });
 
 // Save settings to Firebase
@@ -169,11 +176,18 @@ document.getElementById("go-to-add-weight").addEventListener("click", (e) => {
 	document.getElementById("add-weight").style.display = "flex";
 });
 
-// Close add weight window
+// Close add weight window (with "x" button)
 
 document.getElementById("close-add-weight").addEventListener("click", (e) => {
-	drawDashboard(email);
 	document.getElementById("add-weight").style.display = "none";
+});
+
+// Close add weight window (clicking outside the box)
+
+document.getElementById("add-weight").addEventListener("click", (e) => {
+	if (!document.getElementById("add-weight").firstElementChild.contains(e.target)) {
+		document.getElementById("close-add-weight").click();
+	}
 });
 
 // Save weight to Firebase

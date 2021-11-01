@@ -17,7 +17,7 @@
 .settings {
 	width: 600px;
 	height: fit-content;
-	padding: 1em 2em;
+	padding: 1.5em;
 	background-color: #fff;
 	border-radius: 0.5em;
 	position: relative;
@@ -72,7 +72,7 @@
 .add-weight {
 	width: 450px;
 	height: fit-content;
-	padding: 1em 2em;
+	padding: 1.5em;
 	background-color: #fff;
 	border-radius: 0.5em;
 	position: relative;
