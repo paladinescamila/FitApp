@@ -77,3 +77,10 @@ signupForm.addEventListener("click", async (e) => {
 		alert("Todos los campos deben ser llenados.");
 	}
 });
+
+document.getElementById("pwd").addEventListener("keyup", (e) => {
+	if (e.keyCode === 13) {
+		event.preventDefault();
+		signupForm.click();
+	}
+});

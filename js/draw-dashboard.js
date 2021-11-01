@@ -67,17 +67,17 @@ const drawDashboard = async (email) => {
 				targetWeight = 25 * (height / 100) ** 2;
 
 			// IMC data
-			let IMCs = weights.map((w) => getIMC(w, height)),
+			let IMCs = weights.map((w) => getIMC(w, height).toFixed(2)),
 				IMC = IMCs[nWeight - 1],
 				targetIMC = 25,
 				IMCLevel = getIMCLevel(IMC);
 
 			// Muscle data
-			let muscles = weights.map((w) => getMuscle(w, height, sex)),
+			let muscles = weights.map((w) => getMuscle(w, height, sex).toFixed(0)),
 				muscle = muscles[nWeight - 1];
 
 			// Water data
-			let waters = weights.map((w) => getWater(w, height, age)),
+			let waters = weights.map((w) => getWater(w, height, age).toFixed(0)),
 				water = waters[nWeight - 1];
 
 			// Paint data in the dashboard banner
@@ -101,11 +101,11 @@ const drawDashboard = async (email) => {
 			// Paint data in the grid
 			weightCardElement.innerHTML = weight + "Kg";
 			targetWeightElement.innerHTML = "Peso objetivo: " + Math.floor(targetWeight) + "Kg";
-			imcCardElement.innerHTML = IMC.toFixed(2);
+			imcCardElement.innerHTML = IMC;
 			imcLevelElement.innerHTML = IMCLevelNames[IMCLevel];
 			imcLevelElement.style.backgroundColor = IMCLevelColors[IMCLevel];
-			muscleElement.innerHTML = muscle.toFixed(0) + "%";
-			waterElement.innerHTML = water.toFixed(0) + "%";
+			muscleElement.innerHTML = muscle + "%";
+			waterElement.innerHTML = water + "%";
 
 			// Paint charts
 			drawWeight(dates, weights, targetWeight);

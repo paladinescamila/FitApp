@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1635794973896" clover="3.2.0">
-  <project timestamp="1635794973897" name="All files">
+<coverage generated="1635798122210" clover="3.2.0">
+  <project timestamp="1635798122211" name="All files">
     <metrics statements="29" coveredstatements="29" conditionals="24" coveredconditionals="24" methods="4" coveredmethods="4" elements="57" coveredelements="57" complexity="0" loc="29" ncloc="29" packages="1" files="1" classes="1"/>
     <file name="to_test.js" path="C:\Users\Camila\Documents\ISC\8\Construccion_de_Software_y_Pruebas\Trabajos\Proyecto\FitApp\test\to_test.js">
       <metrics statements="29" coveredstatements="29" conditionals="24" coveredconditionals="24" methods="4" coveredmethods="4"/>

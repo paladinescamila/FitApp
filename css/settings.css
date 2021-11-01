@@ -108,20 +108,32 @@
 }
 
 @media (max-width: 650px) {
-	.settings,
-	.add-weight {
+	.settings {
 		width: 90%;
 	}
 }
 
-@media (max-width: 450px) {
-	.data-container,
+@media (max-width: 500px) {
+	.add-weight {
+		width: 90%;
+	}
+
+	.data-container {
+		grid-template-columns: 1fr 2fr;
+	}
+}
+
+@media (max-width: 480px) {
 	.change-pass-container {
 		grid-template-columns: 1fr;
 	}
 }
 
 @media (max-width: 400px) {
+	.data-container {
+		grid-template-columns: 1fr 1fr;
+	}
+
 	.data-container-2 {
 		grid-template-columns: 1fr;
 		grid-gap: 0.5em;
