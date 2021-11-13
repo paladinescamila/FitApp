@@ -25,28 +25,28 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>14/14</span>
+                <span class='fraction'>41/41</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>10/10</span>
+                <span class='fraction'>24/24</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>9/9</span>
+                <span class='fraction'>29/29</span>
             </div>
         
             
@@ -109,36 +109,36 @@
 <a name='L50'></a><a href='#L50'>50</a>
 <a name='L51'></a><a href='#L51'>51</a>
 <a name='L52'></a><a href='#L52'>52</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -155,42 +155,42 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// // IMC
-// const getIMC = (weight, height) =&gt; {
-// 	let IMC = weight / (height / 100) ** 2;
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// IMC
+const getIMC = (weight, height) =&gt; {
+	let IMC = weight / (height / 100) ** 2;
 &nbsp;
-// 	if (IMC &lt; 0) IMC = 0;
-// 	if (IMC &gt; 600) IMC = 600;
+	if (IMC &lt; 0) IMC = 0;
+	if (IMC &gt; 600) IMC = 600;
 &nbsp;
-// 	return parseFloat(IMC.toFixed(2));
-// };
+	return parseFloat(IMC.toFixed(2));
+};
 &nbsp;
-// // Muscle
-// const getMuscle = (weight, height, sex) =&gt; {
-// 	let muscle = 0;
+// Muscle
+const getMuscle = (weight, height, sex) =&gt; {
+	let muscle = 0;
 &nbsp;
-// 	if (sex === "m") muscle = ((1.1 * weight - 128 * (weight ** 2 / height ** 2)) * 100) / weight;
-// 	else muscle = ((1.07 * weight - 148 * (weight ** 2 / height ** 2)) * 100) / weight;
+	if (sex === "m") muscle = ((1.1 * weight - 128 * (weight ** 2 / height ** 2)) * 100) / weight;
+	else muscle = ((1.07 * weight - 148 * (weight ** 2 / height ** 2)) * 100) / weight;
 &nbsp;
-// 	if (muscle &lt; 0) muscle = 0;
-// 	if (muscle &gt; 100) muscle = 100;
+	if (muscle &lt; 0) muscle = 0;
+	if (muscle &gt; 100) muscle = 100;
 &nbsp;
-// 	return parseFloat(muscle.toFixed(2));
-// };
+	return parseFloat(muscle.toFixed(2));
+};
 &nbsp;
-// // Water
-// const getWater = (weight, height, age) =&gt; {
-// 	let water = 2.447 - 0.09156 * age + 0.1074 * height + 0.3362 * weight;
+// Water
+const getWater = (weight, height, age) =&gt; {
+	let water = 2.447 - 0.09156 * age + 0.1074 * height + 0.3362 * weight;
 &nbsp;
-// 	if (water &lt; 0) water = 0;
-// 	if (water &gt; 250) water = 250;
+	if (water &lt; 0) water = 0;
+	if (water &gt; 250) water = 250;
 &nbsp;
-// 	return parseFloat(water.toFixed(2));
-// };
+	return parseFloat(water.toFixed(2));
+};
 &nbsp;
 // IMC classification
 const getIMCLevel = (IMC) =&gt; {
@@ -206,9 +206,9 @@ const getIMCLevel = (IMC) =&gt; {
 };
 &nbsp;
 // Export functions to test
-// exports.getIMC = getIMC;
-// exports.getMuscle = getMuscle;
-// exports.getWater = getWater;
+exports.getIMC = getIMC;
+exports.getMuscle = getMuscle;
+exports.getWater = getWater;
 exports.getIMCLevel = getIMCLevel;
 &nbsp;</pre></td></tr></table></pre>
 
@@ -217,7 +217,7 @@ exports.getIMCLevel = getIMCLevel;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Fri Nov 12 2021 00:45:14 GMT-0500 (hora estándar de Colombia)
+                at Sat Nov 13 2021 17:09:24 GMT-0500 (hora estándar de Colombia)
             </div>
         </div>
         <script src="prettify.js"></script>
