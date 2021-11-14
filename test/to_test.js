@@ -36,9 +36,9 @@ const getIMCLevel = (IMC) => {
 	let IMCLevel = -1;
 
 	if ((IMC >= 0) & (IMC < 18.5)) IMCLevel = 0;
-	else if ((IMC >= 18.5) & (IMC <= 24.9)) IMCLevel = 1;
-	else if ((IMC >= 25) & (IMC <= 29.9)) IMCLevel = 2;
-	else if ((IMC >= 30) & (IMC <= 34.9)) IMCLevel = 3;
+	else if ((IMC >= 18.5) & (IMC < 25)) IMCLevel = 1;
+	else if ((IMC >= 25) & (IMC < 30)) IMCLevel = 2;
+	else if ((IMC >= 30) & (IMC < 35)) IMCLevel = 3;
 	else if (IMC >= 35) IMCLevel = 4;
 
 	return IMCLevel;

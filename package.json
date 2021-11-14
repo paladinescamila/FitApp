@@ -4,9 +4,11 @@
 	"description": "",
 	"scripts": {
 		"test": "jest",
-		"test:coverage": "jest --coverage"
+		"test:coverage": "jest --coverage",
+		"cypress:open": "cypress open"
 	},
 	"devDependencies": {
+		"cypress": "^9.0.0",
 		"jest": "^27.2.5"
 	},
 	"dependencies": {
