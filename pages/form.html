@@ -13,17 +13,23 @@
 		<img src="../img/run.svg" alt="Running" class="running" />
 		<div class="form-container">
 			<h1>Cuéntanos de ti</h1>
-			<input id="weight" type="number" placeholder="Peso (Kg)" required />
-			<input id="height" type="number" placeholder="Estatura (cm)" required />
-			<div class="sex">
-				<p>Sexo</p>
+			<div class="data-item">
+				<label for="weight">Peso (Kg)</label>
+				<input id="weight" type="number" required />
+			</div>
+			<div class="data-item">
+				<label for="height">Estatura (cm)</label>
+				<input id="height" type="number" required />
+			</div>
+			<div class="data-item">
+				<label for="sex">Sexo</label>
 				<select name="sex" id="gender">
 					<option value="f">Femenino</option>
 					<option value="m">Masculino</option>
 				</select>
 			</div>
-			<div class="birth">
-				<p>Nacimiento</p>
+			<div class="data-item">
+				<label for="birth">Nacimiento</label>
 				<input id="birth" type="date" required />
 			</div>
 			<button id="save">Guardar</button>

@@ -207,3 +207,12 @@ document.getElementById("save-weight").addEventListener("click", async (e) => {
 
 	if (validUpdate == 2) updateWeightDate(user, newDate, newWeight, true);
 });
+
+// Save weight pressing ENTER on the weight input
+
+document.getElementById("weight").addEventListener("keyup", (e) => {
+	if (e.keyCode === 13) {
+		event.preventDefault();
+		document.getElementById("save-weight").click();
+	}
+});
