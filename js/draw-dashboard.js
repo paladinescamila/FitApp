@@ -104,6 +104,8 @@ const drawDashboard = async (email) => {
 			imcCardElement.innerHTML = IMC;
 			imcLevelElement.innerHTML = IMCLevelNames[IMCLevel];
 			imcLevelElement.style.backgroundColor = IMCLevelColors[IMCLevel];
+			// imcLevelElement.innerHTML = IMCLevel >= 0 ? IMCLevelNames[IMCLevel] : "IMC no válido";
+			// imcLevelElement.style.backgroundColor = IMCLevel >= 0 ? IMCLevelColors[IMCLevel] : "gray";
 			muscleElement.innerHTML = muscle + "%";
 			waterElement.innerHTML = water + "%";
 
