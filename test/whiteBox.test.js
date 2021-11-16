@@ -1,5 +1,5 @@
 const {expect} = require("@jest/globals");
-const {getMuscle, getIMCLevel, getIMC, getWater} = require("./to_test");
+const {getMuscle, getIMCLevel, getIMC, getWater} = require("./functions_to_test");
 
 // getIMC tests
 describe("getIMC", () => {
