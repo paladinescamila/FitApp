@@ -61,52 +61,48 @@
             </div>
         </div>
         <div class="dark-bg" id="settings">
-            <form action="" method="post">
-                <div class="settings">
-                    <img src="/img/x.svg" alt="Close" id="close-settings" />
-                    <p class="settings-title">Configuraciones</p>
-                    <div class="data-container">
-                        <p>Nombre</p>
-                        <input type="text" class="input" id="name" />
-                        <p>Nacimiento</p>
-                        <input type="date" class="input" id="birth" />
-                        <p>Sexo</p>
-                        <select id="sex" class="input">
-                            <option value="f">Femenino</option>
-                            <option value="m">Masculino</option>
-                        </select>
-                        <p>Estatura (cm)</p>
-                        <input type="number" class="input" id="height" />
-                    </div>
-                    <div class="change-pass">
-                        <p>Cambiar contraseña</p>
-                        <div class="change-pass-container">
-                            <p>Contraseña anterior</p>
-                            <input type="password" class="input" id="old-pass" />
-                            <p>Contraseña nueva</p>
-                            <input type="password" class="input" id="new-pass" />
-                            <p>Repetir contraseña nueva</p>
-                            <input type="password" class="input" id="new-pass-2" />
-                        </div>
-                    </div>
-                    <button class="solid-button" id="save-settings">Guardar</button>
+            <div class="settings">
+                <img src="/img/x.svg" alt="Close" id="close-settings" />
+                <p class="settings-title">Configuraciones</p>
+                <div class="data-container">
+                    <p>Nombre</p>
+                    <input type="text" class="input" id="name" />
+                    <p>Nacimiento</p>
+                    <input type="date" class="input" id="birth" />
+                    <p>Sexo</p>
+                    <select id="sex" class="input">
+                        <option value="f">Femenino</option>
+                        <option value="m">Masculino</option>
+                    </select>
+                    <p>Estatura (cm)</p>
+                    <input type="number" class="input" id="height" />
                 </div>
-            </form>
+                <div class="change-pass">
+                    <p>Cambiar contraseña</p>
+                    <div class="change-pass-container">
+                        <p>Contraseña anterior</p>
+                        <input type="password" class="input" id="old-pass" />
+                        <p>Contraseña nueva</p>
+                        <input type="password" class="input" id="new-pass" />
+                        <p>Repetir contraseña nueva</p>
+                        <input type="password" class="input" id="new-pass-2" />
+                    </div>
+                </div>
+                <button class="solid-button" id="save-settings">Guardar</button>
+            </div>
         </div>
         <div class="dark-bg" id="add-weight">
-            <form action="" method="post">
-                <div class="add-weight">
-                    <img src="/img/x.svg" alt="Close" id="close-add-weight" />
-                    <p class="add-weight-title">Nuevo peso</p>
-                    <div class="data-container-2">
-                        <p>Fecha</p>
-                        <input type="date" class="input" id="date" />
-                        <p>Peso (Kg)</p>
-                        <input type="number" class="input" id="weight" />
-                    </div>
-                    <button class="solid-button" id="save-weight">Agregar</button>
+            <div class="add-weight">
+                <img src="/img/x.svg" alt="Close" id="close-add-weight" />
+                <p class="add-weight-title">Nuevo peso</p>
+                <div class="data-container-2">
+                    <p>Fecha</p>
+                    <input type="date" class="input" id="date" />
+                    <p>Peso (Kg)</p>
+                    <input type="number" class="input" id="weight" />
                 </div>
-            </form>
+                <button type="submit" class="solid-button" id="save-weight">Agregar</button>
+            </div>
         </div>
         <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-firestore.js"></script>
