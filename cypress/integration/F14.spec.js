@@ -33,7 +33,9 @@ describe("Actualización de configuraciones", () => {
 		cy.get("#sex").select("f");
 		cy.get("#height").clear().type("162");
 		cy.get("#save-settings").click();
-		cy.get("#settings").should("have.css", "display", "none");
+		cy.on("window:alert", (text) => {
+			expect(text).to.contains("Inserte un nombre válido.");
+		});
 	});
 
 	it("P4: Operación fallida por fecha futura", () => {
@@ -42,7 +44,9 @@ describe("Actualización de configuraciones", () => {
 		cy.get("#sex").select("f");
 		cy.get("#height").clear().type("162");
 		cy.get("#save-settings").click();
-		cy.get("#settings").should("have.css", "display", "none");
+		cy.on("window:alert", (text) => {
+			expect(text).to.contains("Inserte una fecha válida.");
+		});
 	});
 
 	it("P5: Operación fallida por fecha informato incorrecto", () => {
@@ -51,7 +55,9 @@ describe("Actualización de configuraciones", () => {
 		cy.get("#sex").select("f");
 		cy.get("#height").clear().type("162");
 		cy.get("#save-settings").click();
-		cy.get("#settings").should("have.css", "display", "none");
+		cy.on("window:alert", (text) => {
+			expect(text).to.contains("Inserte una fecha válida.");
+		});
 	});
 
 	it("P6: Operación fallida por estatura menor", () => {
@@ -60,7 +66,9 @@ describe("Actualización de configuraciones", () => {
 		cy.get("#sex").select("f");
 		cy.get("#height").clear().type("-30");
 		cy.get("#save-settings").click();
-		cy.get("#settings").should("have.css", "display", "none");
+		cy.on("window:alert", (text) => {
+			expect(text).to.contains("Inserte una estatura válida.");
+		});
 	});
 
 	it("P7: Operación fallida por estatura mayor", () => {
@@ -69,6 +77,8 @@ describe("Actualización de configuraciones", () => {
 		cy.get("#sex").select("f");
 		cy.get("#height").clear().type("5000");
 		cy.get("#save-settings").click();
-		cy.get("#settings").should("have.css", "display", "none");
+		cy.on("window:alert", (text) => {
+			expect(text).to.contains("Inserte una estatura entre 100 y 300.");
+		});
 	});
 });

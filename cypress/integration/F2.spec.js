@@ -17,7 +17,9 @@ describe("Registro de usuario", () => {
 		cy.get("#user").type("tomy@fitapp.com");
 		cy.get("#pwd").type("123");
 		cy.get("#signup").click();
-		cy.get("#save").contains("Guardar");
+		cy.on("window:alert", (text) => {
+			expect(text).to.contains("La contraseña debe tener al menos 8 caracteres.");
+		});
 	});
 
 	it("P3: Registro fallido por correo no válido", () => {
@@ -25,13 +27,17 @@ describe("Registro de usuario", () => {
 		cy.get("#user").type("hola");
 		cy.get("#pwd").type("12345678");
 		cy.get("#signup").click();
-		cy.get("#save").contains("Guardar");
+		cy.on("window:alert", (text) => {
+			expect(text).to.contains("El texto ingresado no es un correo electrónico.");
+		});
 	});
 
 	it("P4: Registro fallido por nombre no válido", () => {
 		cy.get("#user").type("tomy@gmail.com");
 		cy.get("#pwd").type("12345678");
 		cy.get("#signup").click();
-		cy.get("#save").contains("Guardar");
+		cy.on("window:alert", (text) => {
+			expect(text).to.contains("Todos los campos deben ser llenados.");
+		});
 	});
 });

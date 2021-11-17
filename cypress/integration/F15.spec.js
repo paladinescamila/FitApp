@@ -21,7 +21,9 @@ describe("Cambio de contraseña", () => {
 		cy.get("#new-pass").type("87654321");
 		cy.get("#new-pass-2").type("hola1234");
 		cy.get("#save-settings").click();
-		cy.get("#settings").should("have.css", "display", "none");
+		cy.on("window:alert", (text) => {
+			expect(text).to.contains("Las contraseñas no coinciden.");
+		});
 	});
 
 	it("P3: Cambio de contraseña fallido por contraseña nueva no válida", () => {
@@ -29,7 +31,9 @@ describe("Cambio de contraseña", () => {
 		cy.get("#new-pass").type("12345");
 		cy.get("#new-pass-2").type("12345");
 		cy.get("#save-settings").click();
-		cy.get("#settings").should("have.css", "display", "none");
+		cy.on("window:alert", (text) => {
+			expect(text).to.contains("La contraseña debe tener 8 caracteres o más.");
+		});
 	});
 
 	it("P4: Cambio de contraseña fallido por contraseña anterior incorrecta", () => {
@@ -37,6 +41,8 @@ describe("Cambio de contraseña", () => {
 		cy.get("#new-pass").type("87654321");
 		cy.get("#new-pass-2").type("87654321");
 		cy.get("#save-settings").click();
-		cy.get("#settings").should("have.css", "display", "none");
+		cy.on("window:alert", (text) => {
+			expect(text).to.contains("La contraseña anterior no es correcta.");
+		});
 	});
 });

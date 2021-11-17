@@ -14,13 +14,17 @@ describe("Inicio de sesión", () => {
 		cy.get("#user").type("prueba@gmail.com");
 		cy.get("#password").type("87654321");
 		cy.get("#login").click();
-		cy.get("#sign-out").contains("Salir");
+		cy.on("window:alert", (text) => {
+			expect(text).to.contains("Usuario o contraseña incorrectos, por favor, intente de nuevo");
+		});
 	});
 
 	it("P3: Ingreso fallido por correo no registrado", () => {
 		cy.get("#user").type("nuevo@gmail.com");
 		cy.get("#password").type("12345678");
 		cy.get("#login").click();
-		cy.get("#sign-out").contains("Salir");
+		cy.on("window:alert", (text) => {
+			expect(text).to.contains("El usuario no se encuentra creado, por favor, registrese!");
+		});
 	});
 });

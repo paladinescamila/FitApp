@@ -45,7 +45,9 @@ describe("Agregación de características físicas", () => {
 		cy.get("#gender").select("f");
 		cy.get("#birth").type("2020-11-13");
 		cy.get("#save").click();
-		cy.get("#sign-out").contains("Salir");
+		cy.on("window:alert", (text) => {
+			expect(text).to.contains("El peso y la estatura deben ser mayores que 0.");
+		});
 	});
 
 	it("P4: Operación fallida por peso mayor", () => {
@@ -59,7 +61,9 @@ describe("Agregación de características físicas", () => {
 		cy.get("#gender").select("f");
 		cy.get("#birth").type("2020-11-13");
 		cy.get("#save").click();
-		cy.get("#sign-out").contains("Salir");
+		cy.on("window:alert", (text) => {
+			expect(text).to.contains("El peso debe estar entre 25 y 600.");
+		});
 	});
 
 	it("P5: Operación fallida por estatura menor", () => {
@@ -73,7 +77,9 @@ describe("Agregación de características físicas", () => {
 		cy.get("#gender").select("f");
 		cy.get("#birth").type("2020-11-13");
 		cy.get("#save").click();
-		cy.get("#sign-out").contains("Salir");
+		cy.on("window:alert", (text) => {
+			expect(text).to.contains("La estatura debe estar entre 100 y 300.");
+		});
 	});
 
 	it("P6: Operación fallida por estatura mayor", () => {
@@ -87,7 +93,9 @@ describe("Agregación de características físicas", () => {
 		cy.get("#gender").select("f");
 		cy.get("#birth").type("2020-11-13");
 		cy.get("#save").click();
-		cy.get("#sign-out").contains("Salir");
+		cy.on("window:alert", (text) => {
+			expect(text).to.contains("La estatura debe estar entre 100 y 300.");
+		});
 	});
 
 	it("P7: Operación fallida por fecha futura", () => {
@@ -101,7 +109,9 @@ describe("Agregación de características físicas", () => {
 		cy.get("#gender").select("f");
 		cy.get("#birth").type("2050-11-13");
 		cy.get("#save").click();
-		cy.get("#sign-out").contains("Salir");
+		cy.on("window:alert", (text) => {
+			expect(text).to.contains("La fecha no puede ser futura.");
+		});
 	});
 
 	it("P8: Operación fallida por fecha con formato incorrecto", () => {
@@ -114,6 +124,8 @@ describe("Agregación de características físicas", () => {
 		cy.get("#height").type("170");
 		cy.get("#gender").select("f");
 		cy.get("#save").click();
-		cy.get("#sign-out").contains("Salir");
+		cy.on("window:alert", (text) => {
+			expect(text).to.contains("Por favor, llena todos los campos.");
+		});
 	});
 });
