@@ -200,7 +200,7 @@ document.getElementById("save-weight").addEventListener("click", async (e) => {
 	if (newDate <= new Date()) validUpdate++;
 	else alert("Ingrese una fecha válida.");
 
-	if (!isNaN(newWeight) && newWeight > 0) {
+	if (!isNaN(newWeight)) {
 		if (newWeight >= 25 && newWeight <= 600) validUpdate++;
 		else alert("Inserte un peso entre 25 y 600.");
 	} else alert("Inserte un peso válido.");

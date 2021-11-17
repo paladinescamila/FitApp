@@ -8,9 +8,19 @@
 		"cypress:open": "cypress open"
 	},
 	"devDependencies": {
+		"cypress": "^9.0.0",
+		"eslint-plugin-cypress": "^2.12.1",
 		"jest": "^27.2.5"
 	},
 	"dependencies": {
 		"mocha": "^9.1.2"
+	},
+	"eslintConfig": {
+		"env": {
+			"cypress/globals": true
+		},
+		"plugins": [
+			"cypress"
+		]
 	}
 }
