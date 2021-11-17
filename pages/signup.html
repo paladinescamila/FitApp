@@ -1,28 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="shortcut icon" href="../img/Logo.svg" type="image/x-icon" />
-		<title>FitApp</title>
-		<link rel="stylesheet" href="../css/forms.css" />
-	</head>
-	<body>
-		<img src="../img/Logo.svg" alt="FitApp" class="logo" />
-		<img src="../img/run.svg" alt="Running" class="running" />
-		<div class="form-container">
-			<h1>Regístrate</h1>
-			<input id="name" type="text" placeholder="Nombre" required />
-			<input id="user" type="email" placeholder="Correo electrónico" required />
-			<input id="pwd" type="password" placeholder="Contraseña" required />
-			<button id="signup">Crear cuenta</button>
-			<p>¿Ya tienes una cuenta? <a href="../index.html">¡Inicia sesión!</a></p>
-		</div>
-		<img src="../img/bike.svg" alt="Cycling" class="cycling" />
-		<script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-app.js"></script>
-		<script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-firestore.js"></script>
-		<script src="../js/firebase.js"></script>
-		<script src="../js/signup.js"></script>
-	</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="../img/Logo.svg" type="image/x-icon" />
+        <title>FitApp</title>
+        <link rel="stylesheet" href="../css/forms.css" />
+    </head>
+    <body>
+        <img src="../img/Logo.svg" alt="FitApp" class="logo" />
+        <img src="../img/run.svg" alt="Running" class="running" />
+        <form action="" method="post">
+            <div class="form-container">
+                <h1>Regístrate</h1>
+                <input id="name" type="text" placeholder="Nombre" required />
+                <input id="user" type="email" placeholder="Correo electrónico" required />
+                <input id="pwd" type="password" placeholder="Contraseña" required />
+                <button id="signup">Crear cuenta</button>
+                <p>¿Ya tienes una cuenta? <a href="../index.html">¡Inicia sesión!</a></p>
+            </div>
+        </form>
+        <img src="../img/bike.svg" alt="Cycling" class="cycling" />
+        <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-firestore.js"></script>
+        <script src="../js/firebase.js"></script>
+        <script src="../js/signup.js"></script>
+    </body>
 </html>
